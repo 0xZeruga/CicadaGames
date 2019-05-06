@@ -1,0 +1,90 @@
+.table-row{
+cursor:pointer;
+}
+
+.table-bordered {
+	margin: 5px;
+}
+.table {
+	border-spacing: 10px;
+}
+body {
+
+    background-position: center; 
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+    font-family: "Lato";
+	color: white;
+	background-size:cover;
+	
+}
+h1 {
+	font-weight: 900;
+	color: black;
+	font-size: 72px;
+	text-align: center;
+}
+.jumbotron {
+	margin-top: 5%;
+	margin-left: 0%;
+	margin-right: 0%;
+	padding: 0%;
+	text-align: center;
+	background: rgba(204, 204, 204, 0);
+}
+
+.header {
+
+}
+
+.rest {
+
+}
+
+#content {
+	margin: 5% 30%;
+	text-align: center;
+	font: 1em solid purple;
+}
+
+.card {
+	color: black;
+	text-align: center;
+	border: 5px solid black;
+	padding-top: 5%;
+	background-color: #ebd5b3 ;
+}
+
+ul li {
+	text-align: left;
+}
+
+.col-sm {
+	margin-bottom: 10%;
+}
+
+html, body {
+
+	height: 100%;   /* ges Hoehe der Seite -> weitere Hoehenangaben werden relativ hierzu ausgewertet */
+	overflow: hidden;   /*  hide scrollbars */
+	opacity: 1.0;
+	-webkit-transition: background 1.5s linear;
+	-moz-transition: background 1.5s linear;
+	-o-transition: background 1.5s linear;
+	-ms-transition: background 1.5s linear;
+	transition: background 1.5s linear;
+}
+
+.table-style {
+	margin-top: 2%;
+	margin-left: 25%;
+	margin-right: 25%;
+	background-color: #006d34;
+	width: 50%;
+	border: 5px solid black;
+	font-size: 30px;
+}

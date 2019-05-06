@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang=”en”>
+	<head>
+		 <meta charset="UTF-8">
+		 <meta name=”viewport” content="width=device-width, initial-scale=1.0">
+		 <meta http-equiv=”X-UA-Compatible” content=”ie=edge”>
+		 <title>Document</title>
+		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+		<link rel="stylesheet" type="text/css" href="game1.css">
+
+
+
+		<style type="text/css">
+
+
+		</style>
+	</head>
+	<body class="body">
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script src="bower_components/web3/dist/web3.min.js"></script>
+
+		<audio autoplay="autoplay" controls="controls"><source src="music/darkcastle.mp3"/><source src="music/darkcastle.mp3"/></audio> 
+
+		<a href="#" id="newChar" class="btn-lg btn-danger" style="float: right; margin-top: 0%;" >New Character</a>
+
+	 <div class="container rounded">
+			<div class="jumbotron">
+				<img src="images/solidity.png"></img>
+			</div>
+			<div>
+				<div>
+						<div class="card" style="max-width: 50%; margin: auto">
+								<img class="card-img-top" src="images/mage.gif" style="max-width: 20%; max-height: 50%; margin: auto;"  alt="Card image cap">
+								<div class="card-body">
+									<h2 class="card-title" style="color: black;">Arngeir</h2>
+									<p class="card-text" style="color: black;">Lv.5 Human Warrior.</p>
+								
+									<div class="row">
+											<div class="col-sm">
+													<ul class="list-group list-group-flush">
+														<li class="list-group-item">Health: </li>
+														<li class="list-group-item">Damage: </li>
+														<li class="list-group-item">Experience: </li>
+													</ul>
+											</div>
+											<div class="col-sm">
+												<ul class="list-group list-group-flush">
+													<li class="list-group-item">Health: </li>
+													<li class="list-group-item">Damage: </li>
+													<li class="list-group-item">Experience: </li>
+													<li class="list-group-item">Health: </li>
+													<li class="list-group-item">Damage: </li>
+													<li class="list-group-item">Experience: </li>
+													</ul>
+												</div>
+											</div>
+											<div>
+												<a href="#" class="btn btn-danger mx-5">Shop</a>
+												<a href="#" class="btn btn-warning mx-5">Arena</a>
+												<a href="#" class="btn btn-primary mx-5">Auction</a>
+											</div>
+									</div>
+								</div>
+						</div>
+				</div>
+		</div> 
+	
+		<script>
+
+        window.addEventListener('load', function() {
+
+
+            // Load WEB3
+            // Check wether it's already injected by something else (like Metamask or Parity Chrome plugin)
+            if(typeof web3 !== 'undefined') {
+                web3 = new Web3(web3.currentProvider);  
+
+            // Or connect to a node
+            } else {
+                web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+            }
+
+            // Check the connection
+            if(!web3.isConnected()) {
+                console.error("Not connected");
+
+            }
+
+            var account = web3.eth.accounts[0];
+            var accountInterval = setInterval(function() {
+              if (web3.eth.accounts[0] !== account) {
+                account = web3.eth.accounts[0];
+                document.getElementById("address").innerHTML = account;
+              }
+            }, 100);
+
+			/*
+
+				const contractABI = []
+				const contractAddreess = 'address'
+				
+				var dapptokenContract = new web3.eth.Contract(contractAbi, contractAddress);
+
+
+				var address = 
+				dapptokenContract.methods.GetCharacters(address)
+
+				For each character in account
+				Get list of ids.
+				ids[]
+
+				GetName(id), GetRace(id); GetLevel(), GetStatus(id);
+			*/    
+
+			$(function() {
+			var body = $("body");
+			var backgrounds = new Array(
+			"url(images/background/Battleground1.png)",
+			"url(images/background/Battleground2.png)",
+			"url(images/background/Battleground3.png)",
+			"url(images/background/Battleground4.png)"
+			);
+			var current = 0;
+
+			function nextBackground() {
+				body.css("background", backgrounds[current = ++current % backgrounds.length]);
+				setTimeout(nextBackground, 20000);
+			}
+
+			setTimeout(nextBackground, 20000); 
+
+			body.css("background", backgrounds[0]);
+			});
+
+
+			num =5;
+
+			function tableCreate(){
+				console.log("table create");
+			    var body = document.body,
+			        tbl  = document.createElement('table');
+				
+				tbl.className += 'table-style table-bordered table-condensed table-hover pos';
+			    tbl.id += 'myTable';
+
+			    for(var i = 0; i < num; i++){
+			        var tr = tbl.insertRow();
+			        tr.className += '.table-row';
+			        tr.id += num;
+
+			        for(var j = 0; j < 5; j++){
+			        	if(i == 0) {
+			        		if(j == 0) {
+								createNode('Id', tr);
+			        		}
+			        		if(j == 1) {
+								createNode('Name', tr);
+			        		}
+							if(j == 2) {
+								createNode('Race', tr);	  
+							}
+							if(j == 3) {
+								createNode('Level', tr);
+			        		}
+							if(j == 4) {
+								createNode('Status', tr);
+			        		}
+			        	} else {
+			        		if(j == 0) {
+
+								createNode('#ID', tr);
+			        		}
+			        		if(j == 1) {
+
+								createNode('NAME', tr);
+			            	}
+			            	if(j == 2) {
+
+								createNode('RACE', tr);
+			            	}
+							if(j == 3) {
+
+								createNode('LEVEL', tr);
+			            	}
+			            	if(j == 4) {
+
+								createNode('STATUS', tr);
+								/*
+								//address -> id of creature
+								dapptokenContract.methods.GetStatus(address).call((err, result) => {
+								    td.appendChild(document.createTextNode(status));
+				                	td.style.border = '1px solid black';
+								})
+								*/
+			            	}
+			        	}
+			        }
+			    }
+			   
+			    body.appendChild(tbl);
+				//$('body').html($('<div>', {class: 'row'}));
+				}
+
+			tableCreate();
+
+			var tbl  = document.getElementById('table');
+			var div = document.getElementById('content');
+			//document.body.insertBefore(div, tbl);
+
+			const characters = [];
+
+			function GetCellValues() {
+			    var table = document.getElementById('myTable');
+			    //Skip first row
+			    for (var r = 1, n = table.rows.length; r < n; r++) {
+			        for (var c = 0, m = table.rows[r].cells.length; c < m; c++) {
+			            console.log(table.rows[r].cells[c].innerHTML);
+			            characters.push(table.rows[r].cells[c].innerHTML)
+			        }
+    			}
+			}
+			//GetCellValues();
+			$('#myTable').find('tr').click( function(){
+			  var row = $(this).find('td:first').text();
+			  alert('You clicked ' + row);
+			  BufferCharacter2(row);
+			});
+
+			$('#newChar').click( function(){
+			  var race = prompt('Enter race (Human, Elf, Dwarf or Orc');
+			  var prof = prompt('Enter class (Warrior, Rogue or Mage'); 
+
+			});
+
+			function insertAfter(newNode, referenceNode) {
+			    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+			}
+
+			function BufferCharacter2(row) {
+				console.log(row);
+			}
+			
+			function createNode(namestring, tr) {
+				var td = tr.insertCell();
+				td.appendChild(document.createTextNode(namestring));
+				td.style.border = '2px solid black';
+				td.style.fontWeight = "700";
+			}
+
+
+			function BufferCharacter(row) {
+				// $('#content').load("https://06a62b50-be8f-4402-b133-c79ef45f40ba.htmlpasta.com/");
+				//var id = row.slice(1);
+/*
+				// create a new div element 
+				var newDiv = document.createElement("div");
+				newDiv.className = "card text-white bg-primary mb-3";
+				newDiv.style ="max-width: 18rem";
+				// and give it some content 
+				var newContent = document.createTextNode("Hi there and greetings!"); 
+				// add the text node to the newly created div
+				newDiv.appendChild(newContent);  
+
+				var headerDiv = document.createElement("div");
+				newDiv.className = "card-header";
+				var header = document.createTextNode("Header"); 
+				headerDiv.appendChild(header);	
+
+				var currentDiv = document.getElementById("div1"); 
+  				document.body.insertBefore(newDiv, currentDiv);
+  				insertAfter(headerDiv, newDiv); 
+*/
+
+				//dapptokenContract.methods.getHealth(account1).call((err, health) => { console.log(health)})
+				//dapptokenContract.methods.getDamage(account1).call((err, damage) => { console.log(damage)})
+
+				//create html elements from data.
+				//id
+				//blockchain lookup
+				//populate data.
+
+			}
+		});
+
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,100 @@
+body {
+    background-color: black;
+}
+
+h1 {
+    font-family: 'Audiowide', cursive;
+    font-size: 108px;
+    color: #00FF41;
+}
+
+p {
+    font-family: 'Audiowide', cursive;
+    color: #00FF41;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.bg-white {
+    background-color: #000!important;
+}
+
+.jumbotron {
+    background-image: url("images/gray4.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    padding-top: 1%;
+}
+
+.navbar-nav {
+    word-spacing: 10%;
+}
+
+.lead {
+    font-weight: 700;
+    color: #00FF41;
+    
+    font-family: 'Audiowide', cursive;
+}
+
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    margin-right: 80px;
+}
+
+.jump {
+    padding: 0px;
+}
+@media screen and (max-width:3048px) {
+    .jumbotron{ padding-bottom:1000px;}
+}
+@media screen and (max-width:2048px) {
+    .jumbotron{ padding-bottom:1000px;}
+}
+@media screen and (max-width:1680px) {
+    .jumbotron{ padding-bottom:840px;}
+}
+@media screen and (max-width:1368x) {
+    .jumbotron{ padding-bottom:670px;}
+}
+@media screen and (max-width:1166px) {
+    .jumbotron{ padding-bottom:500px;}
+}
+@media screen and (max-width:1024px) {
+    .jumbotron{ padding-bottom:300px;}
+}
+@media screen and (max-width:980px) {
+    .jumbotron{ padding-bottom:200px;}
+}
+@media screen and (max-width:767px) {
+    .jumbotron{ padding-bottom:100px;}
+}
+@media screen and (max-width:599px) {
+    .jumbotron{ padding-bottom:50px;}
+}
+@media screen and (max-width:479px) {
+    .jumbotron{ padding-bottom:25px;}
+}
+@media screen and (max-width:374px) {
+.jumbotron{ padding-bottom:0px;}
+}
+
+li a {
+    font-weight: 700;
+
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #00FF41;
+}
+
+.navbar-dark .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show>.nav-link {
+    color: #00FF41;
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #FFFFFF;
+}
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,102,203, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  }
