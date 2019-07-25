@@ -1,0 +1,124 @@
+{
+    "items": [
+        {
+            "armor": [
+                {
+                "headgear": [
+                    {
+                        "NAME": "Leather Cap",
+                        "DEFENSE": "1",
+                        "WEIGHT": "2",
+                        "COST": "50",
+                        "IMAGE": "./images/items/armor/headgear/leathercap.jpg"
+                    },
+                    {
+                        "NAME": "Chainmail Hood",
+                        "DEFENSE": "3",
+                        "WEIGHT": "2",
+                        "COST": "200",
+                        "IMAGE": "./images/items/armor/headgear/chainmailhood.jpg"
+                    },
+                    {
+                        "NAME": "Steel Helmet",
+                        "DEFENSE": "3",
+                        "WEIGHT": "2",
+                        "COST": "500",
+                        "IMAGE": "./images/items/armor/headgear/steelhelmet.jpg"
+                    }
+                ],
+                "chest": [
+                    {   
+                        "NAME": "Steel Helmet",
+                        "DEFENSE": "3",
+                        "WEIGHT": "2",
+                        "COST": "500",
+                        "IMAGE": "./images/items/armor/headgear/steelhelmet.jpg"
+                    }
+                ],
+                "legs": [
+    
+                ],
+                "feet": [
+    
+                ]
+            }],
+
+            "weapons": [{
+                "mainhand": [
+                    {
+                        "NAME": "Shortsword",
+                        "DAMAGE": "3",
+                        "COST": "200",
+                        "IMAGE": "./images/items/weapons/mainhand/shortsword.jpg"
+                    },
+                    {
+                        "NAME": "Broadsword",
+                        "DAMAGE": "5",
+                        "COST": "500",
+                        "IMAGE": "./images/items/weapons/mainhand/broadsword.jpg"
+                    }
+                ],
+                "offhand": [
+                    {
+                        "NAME": "Buckler",
+                        "DEFENSE": "2",
+                        "COST": "200",
+                        "IMAGE": "./images/items/weapons/offhand/buckler.jpg"
+                    },
+                    {
+                        "NAME": "Royal Kingsguard",
+                        "DEFENSE": "8",
+                        "COST": "1000",
+                        "IMAGE": "./images/items/weapons/offhand/royalkingsguard.jpg"
+                    }
+                ],
+                "twohand": [
+                    {
+                        "NAME": "Claymore",
+                        "DAMAGE": "12",
+                        "COST": "1250",
+                        "IMAGE": "./images/items/weapons/twohand/claymore.jpg"
+                    },
+                    {
+                        "NAME": "Hillebard",
+                        "DAMAGE": "8",
+                        "COST": "500",
+                        "IMAGE": "./images/items/weapons/twohand/hillebard.jpg"
+                    }
+                ]
+
+            }],
+
+            "consumables": [{
+                "healing": [
+                    {
+                        "NAME": "Minor Potion of Healing",
+                        "COST": "100",
+                        "IMAGE": "./images/items/consumables/healing/MinorHealing.jpg"
+                    },
+                    {
+                        "NAME": "Major Potion of Healing",
+                        "COST": "250",
+                        "IMAGE": "./images/items/consumables/healing/MajorHealing.jpg"
+                    }
+                ],
+                "elixir": [
+                    {
+                        "NAME": "Elixir of Strength",
+                        "COST": "200",
+                        "IMAGE": "./images/items/consumables/elixir/strength.jpg"
+                    }
+                ],
+                "resurecction": [
+                    {
+                        "NAME": "Revive Stone",
+                        "COST": "1000",
+                        "IMAGE": "./images/items/consumables/resurecction/revivestone.jpg"
+                    }
+  
+                ]
+
+            }]
+        }]
+           
+}

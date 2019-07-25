@@ -27,9 +27,18 @@ h1 {
 	color: black;
 	font-size: 72px;
 	text-align: center;
+	font-family: 'Mali', cursive;
+}
+
+p {
+	font-family: 'Mali', cursive;
+}
+
+li {
+	font-family: 'Mali', cursive;
 }
 .jumbotron {
-	margin-top: 5%;
+	margin-top: 0%;
 	margin-left: 0%;
 	margin-right: 0%;
 	padding: 0%;
