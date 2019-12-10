@@ -4,12 +4,12 @@
 		 <meta charset="UTF-8">
 		 <meta name=”viewport” content="width=device-width, initial-scale=1.0">
 		 <meta http-equiv=”X-UA-Compatible” content=”ie=edge”>
-		 <title>Document</title>
-		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+		  <title>Solidity Solider</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link rel="icon" href="images/cicada.png">
 		<link rel="stylesheet" type="text/css" href="game1.css">
 
-		<link href="https://fonts.googleapis.com/css?family=Mali&display=swap" rel="stylesheet">
+
 
 		<style type="text/css">
 
@@ -78,7 +78,7 @@
 
             // Or connect to a node
             } else {
-                web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:7545"));
+                web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
             }
 
             // Check the connection
@@ -246,7 +246,6 @@
 				td.appendChild(document.createTextNode(namestring));
 				td.style.border = '2px solid black';
 				td.style.fontWeight = "700";
-				console.log("NODE");
 			}
 
 

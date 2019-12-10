@@ -1,0 +1,26 @@
+
+progress         /* All HTML5 progress enabled browsers */ {
+
+    /* Turns off styling - not usually needed, but good to know. */
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border: 2px solid black;
+    
+
+}
+
+/* IE10 */
+progress {
+    color: red;
+}
+
+/* Firefox */
+progress::-moz-progress-bar { 
+    background: red;  
+}
+
+/* Chrome */
+progress::-webkit-progress-value {
+    background: red;
+}

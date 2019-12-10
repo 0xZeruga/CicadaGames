@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>
+        HTML Canvas Animation
+    </title>
+
+</head>
+<body>
+    <!-- <canvas id="canvas"></canvas> -->
+    <button onclick='moveLeft()'>Left</button>
+    <button onclick='moveRight()'>Right</button>
+    <button onclick='makeCanvas(new Canvas(canvasCounter, 800, 800))'>Spawn red box</button>
+    <button onclick='DrawAnimations()'>Draw animations</button>
+    <script>
+
+        var left = false;
+        //All animations start at frame 0.
+        var currentFrame = 0;
+        //Speed for moving animations.
+        var speed = 2;
+        var canvasCounter = 0;
+
+//ok
+        function CreateAnimation(canvas, id, height, width, frames, rows, columns, speed, src, firstanimationrow, secondanimationrow, thirdanimationrow) {
+            this.canvas = canvas;
+            this.id = id;
+            this.height = height;
+            this.width = width;
+            this.frames = frames;
+            this.rows = rows;
+            this.columns = columns;
+            this.speed = speed;
+            this.src = src;
+            this.firstanimationrow = firstanimationrow;
+            this.secondanimationrow = secondanimationrow;
+            this.thirdanimationrow = thirdanimationrow;
+        }
+
+//ok
+        function Canvas(id, height, width) {
+            this.id = id;
+            this.height = height;
+            this.width = width;
+        }
+
+//ok
+        function DrawPosition(x,y) {
+            xPos = x;
+            yPos = y;
+        }
+
+        //ok
+        Canvases = PopulateCanvases();
+        DrawCanvases();
+        
+
+
+//ok
+        function PopulateCanvases() {
+            console.log("run pop");
+            var c = new Canvas(canvasCounter, 800, 800);
+           // var c2 = new Canvas("2", 200, 200);
+            var canvases = [];
+            canvases.push(c);
+           // canvases.push(c2);
+            console.log(canvases);
+            //Todo add more canvases.
+
+            return canvases;
+        }
+
+//ok
+        Animations = PopulateAnimations();
+        DrawAnimations();
+ //ok
+        function PopulateAnimations() {
+            var a = new CreateAnimation("1", "owl", 4608, 3082, 9, 6, 9, 60, "owl.png", 0, 1, 2);
+            //Todo add more animations
+            var animations = [];
+            animations.push(a);
+            console.log(animations);
+            return animations;
+        }
+        
+        //DRAW CANVASES
+//ok
+        function DrawCanvases() {
+            var a = 0;
+            Canvases.forEach(canvas => {
+                makeCanvas(canvas);
+            });
+        }
+//ok
+        function makeCanvas(canvas) {
+            var x = document.createElement("canvas");
+            x.width = canvas.width;
+            x.height = canvas.height;
+            canvasCounter++;
+            x.id = canvasCounter;
+            var ctx = x.getContext("2d");
+            if(x === undefined) {
+                console.log("x is undefined");
+            }
+            ctx.fillStyle = "#FF0000";
+            ctx.fillRect(x.width, x.height, 150, 100);
+            document.body.appendChild(x);
+        }
+
+        //DRAW ANIMATIONS
+
+//ok
+        function DrawAnimations() {
+            Animations.forEach(animation => {
+                DrawAnimation(animation);
+            });
+        }
+
+//Animation.height is full height.
+//getIndivudualSpriteWidth(animation) for each frame height.
+
+        function DrawAnimation(animation) {
+            console.log(arguments.callee);
+            character = new Image();
+            character.src = animation.src;
+
+            var spriteWidth = getIndividualSpriteWidth(animation);
+            var spriteHeight = getIndividualSpriteHeight(animation);
+
+            //var canvasClass = GetCanvas(animation.canvas); //return dom element instead of class.
+            
+            //TODO: increment id.
+            var canv = document.getElementById(canvasCounter);
+            var ctx = canv.getContext("2d");
+
+            //UGLY CODE BENEATH THIS LINE
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+            var pos = new DrawPosition(500, 500);
+            ctx.clearRect(pos.xPos, pos.yPos, spriteWidth, spriteHeight);
+            animation.currentFrame = animation.currentFrame % animation.frames;
+            pos.xPos = animation.currentFrame * animation.width; //may be w
+            
+            if(left && pos.xPos > 0) {
+                pos.yPos = animation.firstanimationrow * animation.height; //may be h
+                //Enable for movement    
+            //  x-=speed;
+            }  
+            if(!left && pos.xPos < canv.width - animation.width) {
+                pos.yPos = animation.secondanimationrow * animation.height + animation.width
+            }
+
+//change 0,0 to xpos x and y.
+            ctx.drawImage(character, 0, 0, spriteWidth, spriteHeight);
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            //updateFrame(ctx, animation.currentFrame, animation.frames, x, y, width, height);
+
+           
+        }
+
+
+//TOODO: possibly delete. 
+        function updateFrame(currentFrame, frameCount, x, y, width, height) {
+
+            currentFrame = ++currentFrame % frameCount;
+            srcX = currentFrame * width;
+
+            ctx.clearRect(x, y, width, height);
+
+            if(left && x > 0) {
+                srcY = trackLeft * height;
+                //Enable for movement    
+            //  x-=speed;
+            } 
+
+            if(!left && x < canWidth-width) {
+                srcY = trackRight * height + width;
+                //Enable for movement
+                //x+=speed;
+            }
+        }
+
+        function GetCanvas(id) {
+            Canvases.forEach(canvas => {
+                if(canvas.id === id) {
+                    return canvas;
+                } 
+                else {
+                    console.log("No canvas by that id");
+                    return 0;
+                }
+            });
+        }
+
+      /*
+        setCanvasSize("canvas", 800, 800);
+
+        setImage(4608, 3082, "owl.png", 9, 0, 1, 6, 9, character);
+        setImage(288, 384, "warp.png", 3, 0, 1, 4, 3, character);
+        
+        createCanvas("Test", 400, 400);
+*/
+
+        function getIndividualSpriteWidth(animation) {
+            return animation.width / animation.columns;
+        }
+        function getIndividualSpriteHeight(animation) {
+            return animation.height / animation.rows;
+        }
+ 
+        function setCanvasSize(canvasId, w, h) {
+            var canv = document.getElementById(canvasId);
+            canv.width = w;
+            canv.height = h;
+        }
+
+//remove?
+        function setDrawPosition(xPos, yPos) {
+            x = xPos;
+            y = yPos;
+        }
+
+
+        function moveRight() {
+            left = false;
+        }
+        function moveLeft() {
+            left = true;
+        }
+
+        function UpdateDrawings() {
+            Animations.forEach(animation => {
+                setInterval(DrawAnimation(animation), animation.animationSpeed);
+            });
+        }
+
+      
+        </script>
+</body>

@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+        <link rel="stylesheet" type="text/css" href="./healthbar.css" />
+    </head>
+    <body>
+        <h1>This is a Heading</h1>
+        <p>This is a paragraph.</p>
+        <button onclick="decreaseHealth(10)">Decrease</button>
+        <button onclick="increaseHealth(10)">Increase</button>
+        <progress id="health" value="100" max="100" ></progress>
+        <script>
+      
+                let health = document.getElementById("health");
+
+                function decreaseHealth() {
+                    health.value -= 5; 
+                }
+                function increaseHealth() {
+                    health.value += 5; 
+                }
+
+        </script>
+
+
+    </body>
+</html>
