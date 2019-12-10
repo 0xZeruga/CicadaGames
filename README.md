@@ -99,7 +99,7 @@ Create Resurrection Functilaity.
 ## Moderate priorites
 Make/find a picture which contains all elements of the city.
 Finish the sprite animation renderer.
-Filter the 936 creature images to choose which ones to use.
+Filter the 936 creature images to choose which ones to use. https://docs.google.com/spreadsheets/d/1V-rn40dYmb5Da2hNzrCGENrYxbt1ms5XDr5ClYLXnKg/edit?folder=0ABL_kzJhkBDRUk9PVA#gid=0
 Sort the creatures into tiers and determine their base attribute mods.
 Find images for head, chest, legs, boots, offhand and mainhand sprites (10 each for all except off/mainhand which has 20).
 
@@ -111,6 +111,5 @@ Attack with multiple attackers.
 CryptoZombies
 MagicTheGathering
 Diablo2
-
 
 
