@@ -1,6 +1,6 @@
-# CicadaGames
+#### CicadaGames
 
-//Introduction
+### Introduction
 CicadaGames is a decentralized gaming platform with the goal to revolutionize the blockchain space by enabling game developers to hook their own
 smart contracts to our mothercontract and thereby interact in the same token economy and get free webhosting for frontend and publishing.
 There are two currencies on the CicadaNetwork, one being a CicadaTokens, an ERC20 Token with a real-life value which is used for more
@@ -12,7 +12,7 @@ and gold. The background will be a static image of a medieval town with some int
 Each player has an UI with a list of all their creatures. By pressing on a creature they will get a new window with a bigger picture of the creature,
 displaying stats such as health, damage, accuracy, evasion, level, tier and item slots for head, chest, legs, feet, mainhand and offhand.
 
-//Attributes
+### Attributes
 Health: The amount of damage a creature can take before they end up in the Graveyard.
 Damage: The amount of damage a creature can inflict on others.
 Accuracy: The chance of hitting another creature.
@@ -42,7 +42,7 @@ Level: 0011 0000 0000 0000 (1-99)
 Just as the creature themselves each gearpiece is generated at separate tiers: common, uncommon, rare, epic and mythic. Granting more bonuses
 for each tier and outlining the frame with white, green, blue, purple or orange border.
 
-//City
+### City
 In the city the player have multiple buildings that each start at level 1 granting basic functionality. Upgrading the buildings cost
 Cicada Tokens.
 
@@ -67,7 +67,7 @@ Market -> Auction a champion for gold or CicadaTokens to other players. Auction 
 Upgradable buildings costs approximatly 0.001 eth per tier (0.002+0.003+0.004+0.005 = 0.014 eth = 0.2$ per building maxupgraded in time of
   writing).
 
-//Combat
+### Combat
 PvP: A player attack a creature that must have the same level or higher as the creature attacking. A weighed random roll is created by comparing
   the attackers Accuracy to the Defenders Evasion. If the defender fail they take damage, if not the attacker takes damage. If any of the creatures
   health go below 0, they are sent to the graveyard. If the gear bits in any slot is higher for the dying creature than the winner. The loser will
@@ -79,7 +79,7 @@ PvE: A player pay a tiny amount of Cicada to enter the arena against a monster w
   
 In both PvE and PvP combat both creatures remain alive but with little health if the amount of damage isnt enough to kill of either of them.
  
-//Critical priorities
+## Critical priorities
 Enable randomness by Oracle (critical but not urgent)
 Create Character Selection UI.
 Create Character Detail UI.
@@ -96,18 +96,18 @@ Create Arcanist Functionality.
 Create Mad Scientist Functionality.
 Create Resurrection Functilaity.
 
-//Moderate priorites
+## Moderate priorites
 Make/find a picture which contains all elements of the city.
 Finish the sprite animation renderer.
 Filter the 936 creature images to choose which ones to use.
 Sort the creatures into tiers and determine their base attribute mods.
 Find images for head, chest, legs, boots, offhand and mainhand sprites (10 each for all except off/mainhand which has 20).
 
-//Wishlist (no current priority)
+## Wishlist (no current priority)
 Set defenders for incoming attacks.
 Attack with multiple attackers.
 
-//Inspiration
+## Inspiration
 CryptoZombies
 MagicTheGathering
 Diablo2
