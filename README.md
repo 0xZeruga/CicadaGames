@@ -1,4 +1,4 @@
-#### CicadaGames
+### CicadaGames
 
 ### Introduction
 CicadaGames is a decentralized gaming platform with the goal to revolutionize the blockchain space by enabling game developers to hook their own
@@ -78,6 +78,32 @@ PvE: A player pay a tiny amount of Cicada to enter the arena against a monster w
   If they die they are sent to the graveyard, with their gear.
   
 In both PvE and PvP combat both creatures remain alive but with little health if the amount of damage isnt enough to kill of either of them.
+
+### Creature Types & Element
+Each creature also has a type and an element which grants them advantage/disadvantage in combat.
+
+# Type
+Mage > Warrior > Scoundrel > Mage +10%
+
+# Element
+Fire > Earth > Lightning > Construct > Arcane > Abyssal > Divine > Cosmic > Water > Fire... +10% 
+
+Fire Mage vs Earth Warrior = +20%
+Cosmic Scoundrel vs Construct Warrior = -20%
++Neutral = No drawback or advantage.
+
+Fire burns earth.
+Earth mitigates lightning.
+Lightning electrocutes constructs.
+Constructs are resistant to arcane
+Arcane can't handble abyssal magic
+Abyssal was banished by the Divine
+Divine are surprised by the Cosmic beings.
+Cosmic beings are foreign to water.
+Water puts out fires. 
+
+3 playstyles, 9 elements. 27 combos. 
+
  
 ## Critical priorities
 Enable randomness by Oracle (critical but not urgent)
