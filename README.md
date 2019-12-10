@@ -102,7 +102,7 @@ Divine are surprised by the Cosmic beings.
 Cosmic beings are foreign to water.
 Water puts out fires. 
 
-3 playstyles, 9 elements. 27 combos. 
+3 playstyles, 10 elements. 30 combos. 
 
  
 ## Critical priorities
