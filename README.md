@@ -137,5 +137,3 @@ Attack with multiple attackers.
 CryptoZombies
 MagicTheGathering
 Diablo2
-
-
