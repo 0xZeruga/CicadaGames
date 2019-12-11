@@ -1,0 +1,67 @@
+.edgeGlow {
+    border: 3px solid green;
+}
+
+.row {
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 0px;
+}
+
+h1 {
+    font-family: 'Audiowide', cursive;
+    font-size: 48px;
+    color: black;
+    text-align:center;
+    margin-left: 0;
+    border: 5px solid purple;
+    border-radius: 1000px;
+}
+h4 {
+    font-family: 'Audiowide', cursive;
+    font-size: 24px;
+    color: black;
+    text-align:center;
+    margin-top: 20%;
+}
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+  }
+
+.gearpiece {
+    width: 35%;
+    height: 35%;
+}
+
+.gearpiece:hover {
+    transform: scale(1.5);
+}
+
+.attribute {
+    border: 5px solid;
+    border-radius: 1000px;
+    margin: auto;
+}
+
+#attack {
+    border-color: orange;
+    background-color: orange;
+}
+
+#accuracy {
+    border-color: blue;
+    
+}
+#evasion {
+    border-color: green;
+}
+#health {
+    border-color: red;
+}
+
+.nonecentralrow {
+    margin: 0px;
+}
