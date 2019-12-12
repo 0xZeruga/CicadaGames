@@ -1,0 +1,31 @@
+
+.container {
+   
+    background-image: url("../../../images/city/cityoverview/test2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-content: center;
+    text-align: center;
+    margin: auto;
+
+}
+
+.btn {
+}
+
+
+.smallimage {
+    height: 20em;
+    width: 20em;
+    opacity: 60%;
+    margin: 10%;
+    margin-left: 0%;
+    position:relative;
+    border-radius: 1000%;
+}
+
+img:hover {
+    opacity: 100%;
+    background-color: black;
+    transition: opacity 0.5s ease;
+}

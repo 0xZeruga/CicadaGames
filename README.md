@@ -137,3 +137,7 @@ Attack with multiple attackers.
 CryptoZombies
 MagicTheGathering
 Diablo2
+
+remember submit hash of nr locally.
+#bytes32 hash = sha3(N,msg.sender)
+
