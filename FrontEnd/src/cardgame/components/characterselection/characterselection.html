@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name=”viewport” content="width=device-width, initial-scale=1.0">
+    <meta http-equiv=”X-UA-Compatible” content=”ie=edge”>
+    <title>Town</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="icon" href="../../../images/cicada.png">
+    <link rel="stylesheet" type="text/css" href="../characterselection/characterselection.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1>Arena</h1>
+    <h2>Gladiators</h2>
+    <label for="address" class="col-lg-2 control-label">Ethereum Address</label>
+    <input id="address" type="text">
+    <label for="balance" class="col-lg-2 control-label">Balance</label>
+    <input id="balance" type="text">
+
+    <table id="characterTable">
+        <tbody>
+            <tr>
+                <td>
+                    <button class="link" onClick="NameSort()"><span style="font-weight:bold">Name</span></td>
+                <td>
+                    <button class="link" onClick="LevelSort()"><span style="font-weight:bold">Level</span></td>
+                <td>
+                    <button class="link" onClick="DateSort()"><span style="font-weight:bold">Date Created</span></td>
+                <td>
+                    <button class="link" onClick="ActionSort()"><span style="font-weight:bold">Currently</span></td>
+            </tr>
+            <tr class="clickable-row" id="hej">
+                <td>Test name</td>
+                <td>1</td>
+                <td>01-01-01</td>
+                <td>None</td>
+            </tr>
+            <tr class="clickable-row" data-href="url://bluh">
+                <td>Test 2</td>
+                <td>2</td>
+                <td>01-01-01</td>
+                <td>None</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        
+        //Change so that click ports info
+        $('#characterTable').find('tr').click(function() {
+            var textrow = $(this).find('td:first').text();
+            alert('You clicked ' + textrow);
+            var el = document.getElementById("hej");
+
+            if (el) {
+                el.addEventListener('click', resetEmotes, false);
+            } else {
+                console.log(el);
+            }
+
+            function resetEmotes() {
+                console.log("Testing");
+            }
+
+            if (typeof web3 !== 'undefined') {
+                var web3 = new Web3(web3.currentProvider);
+            } else {
+                // set the provider you want from Web3.providers
+                var web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+            }
+            web3.eth.defaultAccount = web3.eth.accounts[0];
+            console.log(web3.eth.defaultAccount.Balance);
+            /*
+                var abi = JSON.parse('{"contract_name": "Something","abi": [{"constant":true,"inputs":[],"name":"hello","outputs":[{"name":"","type":"bool"}],"type":"function"}]');
+                var ArenaContract = web3.eth.contract(abi);
+                var Arena = ArenaContract.at('PASTE CONTRACT ADDRESS HERE');
+                console.log(Arena); */
+            var adr = document.getElementById("address");
+            adr.innerHTML = web3.eth.defaultAccount;
+            //tokens = Arena.GetPlayerBalance(web3.eth.defaultAccount);
+            //  var bal = document.getElementById("balance");
+            //  bal.innerHTML = tokens;
+            //  GenerateFrontPage();
+            var inputElement = document.createElement('input');
+            inputElement.type = "button"
+            inputElement.addEventListener('click', function() {
+                gotoNode(result.name);
+            });
+        });
+
+        function GenerateFrontPage() {
+            var glads = Arena.GetPlayerGladiators(web3.eth.defaultAccount);
+            var gladlength = glads.length;
+            var table = document.getElementById("characterTable");
+            var i;
+            for (i = 0; i < gladlength; i++) {
+                var row = table.insertRow(-1);
+                var name = row.insertCell(0);
+                var level = row.insertCell(1);
+                var datecreated = row.insertCell(2);
+                var currently = row.insertCell(3);
+                name.innerHTML = glads[i].Name; //
+                level.innerHTML = glads[i].Level;
+                datecreated.innerHTML = glads[i].DateCreated;
+                currently.innerHTML = glads[i].Currently;
+                var inputElement = row.createElement('input');
+                inputElement.type = "button"
+                inputElement.addEventListener('click', function() {
+                    GenerateCharacterPage(row.Name.innerHTML);
+                });
+            }
+        }
+
+        $('#character tr').on('click', 'tr', function() {
+        GenerateCharacterPage("gladid");
+        });
+
+        function GenerateCharacterPage(id) {
+            console.log("ok" + id);
+            //Generate character from id.
+        }
+
+        function NameSort() {
+            console.log("Name");
+        }
+
+        function LevelSort() {
+            console.log("Level");
+        }
+
+        function DateSort() {
+            console.log("Date");
+        }
+
+        function ActionSort() {
+            console.log("Action");
+        }
+    </script>
+
+</body>
+
+</html>
