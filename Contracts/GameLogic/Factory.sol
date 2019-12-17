@@ -3,8 +3,9 @@ pragma solidity >=0.5.0 <0.6.0;
 import "../Ownership/ownable.sol";
 import "../SafeMath/safemath.sol";
 import "../SolidityHelpers/solidityHelper.sol";
+import "../Creatures/Creatures.sol";
 
-contract Factory is Ownable, SolidityHelper {
+contract Factory is Ownable, SolidityHelper, Creatures{
 
   using SafeMath for uint256;
   using SafeMath32 for uint32;
@@ -21,6 +22,8 @@ contract Factory is Ownable, SolidityHelper {
     uint dna;
     uint32 level;
     uint32 readyTime;
+    uint16 kills;
+    uint16 deaths;
     uint16 winCount;
     uint16 lossCount;
     uint16 health;
@@ -29,12 +32,15 @@ contract Factory is Ownable, SolidityHelper {
     uint16 accuracy;
     uint16 evasion;
     uint16 tier;
+    uint16 element;
+    uint16 fightingstyle;
   }
 
   Creature[] public creatures;
 
   mapping (uint => address) public creatureToOwner;
   mapping (address => uint) ownerCreatureCount;
+  mapping(uint => bool) public graveyard;
 
   function createRandomCreature(string memory _name) public {
     require(ownerCreatureCount[msg.sender] == 0, "creature has no owner");
@@ -50,39 +56,34 @@ contract Factory is Ownable, SolidityHelper {
 
   function _createCreature(string memory _name, uint _dna) internal {
 
-    (uint hp, uint dmg, uint acc, uint eva, uint tier) = dnaToStats(_dna);
+    (uint hp, uint dmg, uint acc, uint eva, uint tier, uint element, uint fightingstyle) = dnaToStats(_dna);
 
-    uint id = creatures.push(Creature(_name, _dna, 1, uint32(now + cooldownTime), 0, 0,
-    uint16(hp), uint16(hp), uint16(dmg), uint16(acc), uint16(eva), uint16(tier))) - 1;
+    uint id = creatures.push(Creature(_name, _dna, 1, uint32(now + cooldownTime), 0, 0, 0, 0,
+    uint16(hp), uint16(hp), uint16(dmg), uint16(acc), uint16(eva), uint16(tier), uint16(element), uint16(fightingstyle))) - 1;
 
     creatureToOwner[id] = msg.sender;
     ownerCreatureCount[msg.sender] = ownerCreatureCount[msg.sender].add(1);
     emit NewCreature(id, _name, _dna);
   }
 
-  function dnaToStats(uint _dna) public pure returns (uint hp, uint dmg, uint acc, uint eva, uint tier)  {
+  function dnaToStats(uint _dna) public pure returns (uint hp, uint dmg, uint acc, uint eva, uint tier, uint element, uint fightinstyle)  {
     string memory dna = uintToString(_dna);
     string memory id = getSlice(0,3, dna);
 
-    (uint h, uint d, uint a, uint e, uint t) = getCreatureMold(id);
+    (uint h, uint d, uint a, uint e, uint t, uint elem, uint fightingstyle) = getCreatureMold(id);
 
     return(
       getHealth(h,t,1),
       getDamage(d,t,1),
       getAccuracy(a,t,1),
       getEvasion(e,t,1),
-      t
-      );
-    }
-
-//TODO Populate all creature stats
-  function getCreatureMold(string memory _dnaID) public pure returns (uint healthMod,
-   uint damageMod, uint accuracyMod, uint evasionMod, uint tier) {
-
-    if(compareStrings(_dnaID, "000")) {return (0, 0, 0, 0, 1);}
-    if(compareStrings(_dnaID, "001")) {return (0, 0, 0, 0, 2);}
-    if(compareStrings(_dnaID, "002")) {return (0, 0, 0, 0, 3);}
+      t,
+      elem,
+      fightingstyle
+    );
   }
+
+  //TODO: Add element and type
 
   function getHealth(uint _baseHealthModifier, uint _tier, uint _level) public pure returns (uint) {
     return _baseHealthModifier.mul(_tier) + _baseHealthModifier.mul(_level);
