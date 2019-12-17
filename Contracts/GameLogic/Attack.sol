@@ -11,19 +11,23 @@ contract Attack is Helper {
     return uint(keccak256(abi.encodePacked(now, msg.sender, randNonce))) % _modulus;
   }
 
-  function attack(uint _zombieId, uint _targetId) external onlyOwnerOf(_zombieId) {
-    Zombie storage myZombie = zombies[_zombieId];
-    Zombie storage enemyZombie = zombies[_targetId];
+  function attack(uint _creatureId, uint _targetId) external onlyOwnerOf(_creatureId) {
+    Creature storage myZombie = creatures[_creatureId];
+    Creature storage enemyZombie = creatures[_creatureId];
     uint rand = randMod(100);
     if (rand <= attackVictoryProbability) {
-      myZombie.winCount = myZombie.winCount.add(1);
-      myZombie.level = myZombie.level.add(1);
-      enemyZombie.lossCount = enemyZombie.lossCount.add(1);
-      feedAndMultiply(_zombieId, enemyZombie.dna, "zombie");
+      myCreature.winCount = myCreature.winCount.add(1);
+      myCreature.level = myCreature.level.add(1);
+      enemyCreature.lossCount = enemyCreature.lossCount.add(1);
+      feedAndMultiply(_creatureId, enemyCreature.dna, "zombie");
     } else {
-      myZombie.lossCount = myZombie.lossCount.add(1);
-      enemyZombie.winCount = enemyZombie.winCount.add(1);
-      _triggerCooldown(myZombie);
+      myCreature.lossCount = myCreature.lossCount.add(1);
+      enemyCreature.winCount = enemyCreature.winCount.add(1);
+      _triggerCooldown(myCreature);
     }
   }
+
+  function checkHitchance(uint _zombieId, uint _targetId) internal onlyOwnerOf(_creatureId) {
+    
 }
+

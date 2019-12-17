@@ -6,8 +6,8 @@ contract Helper is Feeding {
 
   uint levelUpFee = 0.001 ether;
 
-  modifier aboveLevel(uint _level, uint _zombieId) {
-    require(zombies[_zombieId].level >= _level);
+  modifier aboveLevel(uint _level, uint _creatureId) {
+    require(creatures[_creatureId].level >= _level, "levelcheck");
     _;
   }
 
@@ -20,24 +20,24 @@ contract Helper is Feeding {
     levelUpFee = _fee;
   }
 
-  function levelUp(uint _zombieId) external payable {
-    require(msg.value == levelUpFee);
-    zombies[_zombieId].level = zombies[_zombieId].level.add(1);
+  function levelUp(uint _creatureId) external payable {
+    require(msg.value == levelUpFee, "Value not correct");
+    creatures[_creatureId].level = creatures[_creatureId].level.add(1);
   }
 
-  function changeName(uint _zombieId, string calldata _newName) external aboveLevel(2, _zombieId) onlyOwnerOf(_zombieId) {
-    zombies[_zombieId].name = _newName;
+  function changeName(uint _creatureId, string calldata _newName) external aboveLevel(2, _creatureId) onlyOwnerOf(_creatureId) {
+    creatures[_creatureId].name = _newName;
   }
 
-  function changeDna(uint _zombieId, uint _newDna) external aboveLevel(20, _zombieId) onlyOwnerOf(_zombieId) {
-    zombies[_zombieId].dna = _newDna;
+  function changeDna(uint _creatureId, uint _newDna) external aboveLevel(20, _creatureId) onlyOwnerOf(_creatureId) {
+    creatures[_creatureId].dna = _newDna;
   }
 
-  function getZombiesByOwner(address _owner) external view returns(uint[] memory) {
-    uint[] memory result = new uint[](ownerZombieCount[_owner]);
+  function getCreaturesByOwner(address _owner) external view returns(uint[] memory) {
+    uint[] memory result = new uint[](ownerCreatureCount[_owner]);
     uint counter = 0;
-    for (uint i = 0; i < zombies.length; i++) {
-      if (zombieToOwner[i] == _owner) {
+    for (uint i = 0; i < creatures.length; i++) {
+      if (creatureToOwner[i] == _owner) {
         result[counter] = i;
         counter++;
       }

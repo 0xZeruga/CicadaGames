@@ -48,7 +48,7 @@
     </table>
 
     <script>
-        
+
         //Change so that click ports info
         $('#characterTable').find('tr').click(function() {
             var textrow = $(this).find('td:first').text();
@@ -73,17 +73,22 @@
             }
             web3.eth.defaultAccount = web3.eth.accounts[0];
             console.log(web3.eth.defaultAccount.Balance);
+
             /*
                 var abi = JSON.parse('{"contract_name": "Something","abi": [{"constant":true,"inputs":[],"name":"hello","outputs":[{"name":"","type":"bool"}],"type":"function"}]');
                 var ArenaContract = web3.eth.contract(abi);
                 var Arena = ArenaContract.at('PASTE CONTRACT ADDRESS HERE');
-                console.log(Arena); */
+                console.log(Arena); 
+            */
+
             var adr = document.getElementById("address");
             adr.innerHTML = web3.eth.defaultAccount;
+
             //tokens = Arena.GetPlayerBalance(web3.eth.defaultAccount);
             //  var bal = document.getElementById("balance");
             //  bal.innerHTML = tokens;
             //  GenerateFrontPage();
+            
             var inputElement = document.createElement('input');
             inputElement.type = "button"
             inputElement.addEventListener('click', function() {
