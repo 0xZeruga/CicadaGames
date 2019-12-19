@@ -1,0 +1,109 @@
+ID	Name	Role	Element	Rarity	Health	Damage	Accuracy	Evasion
+1	Soulsearcher	Assassin	Abyss	Common	3	5	8	4
+2	Gargoyle	Bruiser	Abyss	Common	5	4	4	6
+3	Bloodmancer	Mage	Abyss	Common	4	8	5	3
+4	Ghoul	Tank	Abyss	Common	11	4	3	2
+5	Cursed Book	Assassin	Arcane	Common	3	7	7	3
+6	Witch's Familiar	Bruiser	Arcane	Common	3	4	5	8
+7	Witch Adept	Mage	Arcane	Common	4	6	5	5
+8	Animated pumpkin	Tank	Arcane	Common	10	4	4	2
+9	Mechatron Assault Eagle	Assassin	Construct	Common	2	6	6	6
+10	Mechatron Slicer	Bruiser	Construct	Common	5	5	5	5
+11	Nanotron	Mage	Construct	Common	6	8	4	2
+12	Deepmine Warden	Tank	Construct	Common	9	4	3	4
+13	Psorith	Assassin	Cosmic	Common	3	7	4	6
+14	Adorablob	Bruiser	Cosmic	Common	6	4	5	5
+15	Mitsaiga	Mage	Cosmic	Common	3	8	5	4
+16	Vhornock	Tank	Cosmic	Common	11	4	2	3
+17	Angel of Judgement	Assassin	Divine	Common	3	6	5	6
+18	Angel of Justice	Bruiser	Divine	Common	4	5	5	6
+19	Angel of Mercy	Mage	Divine	Common	4	4	5	7
+20	Celestial Warden	Tank	Divine	Common	8	2	3	7
+21	Carnifex	Assassin	Earth	Common	6	7	4	3
+22	Crawler	Bruiser	Earth	Common	7	6	3	4
+23	Hoto	Mage	Earth	Common	4	5	5	6
+24	Treefolk Warden	Tank	Earth	Common	12	3	4	1
+25	Flameborn Imp	Assassin	Fire	Common	3	7	4	6
+26	Ragefire Bat	Bruiser	Fire	Common	3	5	6	6
+27	Firedancer	Mage	Fire	Common	4	6	6	4
+28	Magmus	Tank	Fire	Common	6	6	4	4
+29	Charged vortex	Assassin	Lightning	Common	3	8	6	3
+30	Voltuff	Bruiser	Lightning	Common	3	7	6	4
+31	Prism of Neth	Mage	Lightning	Common	3	8	6	3
+32	Warden of Neth	Tank	Lightning	Common	6	4	6	4
+33	Huntress	Assassin	Neutral	Common	4	5	6	5
+34	Dogo	Bruiser	Neutral	Common	5	5	5	5
+35	Follower of Croco	Mage	Neutral	Common	3	6	6	5
+36	Pharock Warrior	Tank	Neutral	Common	7	3	4	6
+37	Slicer	Assassin	Neutral	Common	4	6	5	5
+38	Croco Impaler	Bruiser	Neutral	Common	5	5	5	5
+39	Arcane Blob	Mage	Neutral	Common	7	3	4	6
+40	Ninjaro	Tank	Neutral	Common	8	3	3	6
+41	Fangz	Assassin	Water	Common	3	7	4	6
+42	Boldice	Bruiser	Water	Common	7	3	5	5
+43	Loraqua	Mage	Water	Common	4	4	6	6
+44	Frost Warden	Tank	Water	Common	11	3	4	2
+45	Swordwalker	Bruiser	Abyss	Uncommon	8	6	6	5
+46	Mindeater	Mage	Abyss	Uncommon	5	9	5	6
+47	Undead Warden	Tank	Abyss	Uncommon	12	5	4	4
+48	Jabs	Assassin	Arcane	Uncommon	4	7	7	7
+49	Conjurer	Bruiser	Arcane	Uncommon	5	5	6	9
+50	Old Hag	Mage	Arcane	Uncommon	4	9	6	6
+51	Manhunter	Assassin	Construct	Uncommon	6	8	7	4
+52	Scrapyard Construct	Bruiser	Construct	Uncommon	9	6	5	5
+53	Mechablast	Tank	Construct	Uncommon	12	7	4	2
+54	Voidling Snatcher	Assassin	Cosmic	Uncommon	4	8	8	5
+55	Hivemind	Mage	Cosmic	Uncommon	3	10	10	2
+56	Psagorath	Tank	Cosmic	Uncommon	8	5	5	7
+57	Centaurion	Bruiser	Divine	Uncommon	7	6	5	7
+58	Shadowdancer	Mage	Divine	Uncommon	5	8	6	6
+59	Capra	Tank	Divine	Uncommon	9	6	4	6
+60	Petalya	Assassin	Earth	Uncommon	6	7	6	6
+61	Bamboo Elite	Bruiser	Earth	Uncommon	8	7	5	5
+62	Enforcer	Tank	Earth	Uncommon	13	5	4	3
+63	Valkyrion	Assassin	Fire	Uncommon	4	8	7	6
+64	Tormenter	Bruiser	Fire	Uncommon	5	8	7	5
+65	Blazer	Mage	Fire	Uncommon	4	10	6	5
+66	Chargoyle	Assassin	Lightning	Uncommon	5	7	6	7
+67	Thorax	Bruiser	Lightning	Uncommon	9	5	5	6
+68	Manaburst	Mage	Lightning	Uncommon	11	12	2	2
+69	Guildmaster	Assassin	Neutral	Uncommon	5	7	7	6
+70	Pirate Captain	Bruiser	Neutral	Uncommon	5	8	8	4
+71	Goblin Shaman	Mage	Neutral	Uncommon	4	10	7	4
+72	Tough Cookie	Assassin	Neutral	Uncommon	5	6	6	8
+73	Orc Berserk	Bruiser	Neutral	Uncommon	8	7	6	4
+74	Gluttony	Tank	Neutral	Uncommon	10	9	3	3
+75	Creepy Snowman	Assassin	Water	Uncommon	5	9	7	4
+76	Harperion	Bruiser	Water	Uncommon	6	6	6	7
+77	Glob-glob	Tank	Water	Uncommon	12	3	5	5
+78	Demonic Axemaster	Bruiser	Abyss	Rare	9	10	8	8
+79	Arcane Shifter	Bruiser	Arcane	Rare	7	12	9	6
+80	Tempest	Mage	Construct	Rare	8	13	8	6
+81	Voidmancer	Mage	Cosmic	Rare	9	14	4	8
+82	Sacred Djinn	Mage	Divine	Rare	7	8	8	12
+83	Worldeater	Mage	Earth	Rare	12	10	8	5
+84	Ignitius	Tank	Fire	Rare	9	15	5	6
+85	Static Zealot	Assassin	Lightning	Rare	7	10	11	7
+86	Chimera	Bruiser	Neutral	Rare	10	9	8	8
+87	Stalagtuss	Tank	Neutral	Rare	13	9	7	6
+88	Hydrodon	Tank	Water	Rare	15	10	4	6
+89	Bone Cairn	Tank	Abyss	Epic	22	12	10	6
+90	Xanandor, the Eternal	Mage	Arcane	Epic	10	18	12	10
+91	Cogface	Tank	Construct	Epic	20	8	10	12
+92	Amhaodrru	Bruiser	Cosmic	Epic	16	14	10	10
+93	Torald, the Celestial Blacksmith	Bruiser	Divine	Epic	13	13	11	13
+94	Vihara, Watcher of the Wilds	Assassin	Earth	Epic	14	14	12	10
+95	Nazar, the Infernal King	Mage	Fire	Epic	16	18	8	8
+96	Blitz, Rider of the Storm	Assassin	Lightning	Epic	10	16	14	10
+97	Yorn, the Possessed	Tank	Neutral	Epic	18	16	12	4
+98	Acra, Queen of the Frozen Wastes	Bruiser	Water	Epic	13	14	13	10
+99	Reaper of Souls	Assassin	Abyss	Mythic	16	23	16	15
+100	Nostra, Immortal Spellblade	Assassin	Arcane	Mythic	12	22	18	18
+101	Singularity	Bruiser	Construct	Mythic	23	17	16	14
+102	Elesh Madea, Watcher of Worlds	Tank	Cosmic	Mythic	38	14	12	6
+103	Hand of God	Tank	Divine	Mythic	19	19	14	18
+104	Teldra´sin, God of Creation	Tank	Earth	Mythic	44	12	12	2
+105	Ifrit, Destroyer of Worlds	Bruiser	Fire	Mythic	20	28	12	10
+106	Wolt, God of Thunder	Bruiser	Lightning	Mythic	14	20	20	16
+107	Avatar of Time	Mage	Neutral	Mythic	10	16	14	30
+108	Aqua, God of the Ocean	Mage	Water	Mythic	20	22	14	14

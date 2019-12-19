@@ -50,9 +50,8 @@
 
 		<script>
 
-			var path = "../../../images/c (";
-
-			for (var i = 928 - 1; i >= 0; i--) {
+			var path = "/users/Jacob/Documents/Programming/CicadaGames/FrontEnd/src/images/allcreatures/";
+			for (var i = 1; i <= 735; i++) {
 				SpawnStuff(i);
 				console.log(i);
 			}
@@ -70,11 +69,11 @@
 			
 				var lightbox =  document.createElement("a");
 				lightbox.className = "lightbox";
-				lightbox.href = path + num + ".png";
+				lightbox.href = path + "c (" + num + ").png";
 				glow.appendChild(lightbox);
 
 				var image = document.createElement("img");
-				image.src = path + num + ").png";
+				image.src = path + "c (" + num + ").png";
 				image.style.height = 200;
 				image.style.width = 200;
 				
