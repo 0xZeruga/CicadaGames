@@ -104,34 +104,39 @@ Water puts out fires.
 
 3 playstyles, 10 elements. 30 combos. 
 
- 
+## [/] = Halfway-through, [X] = Completed, [-] = Cancelled, [ANT] = Assigned to Anthony, [ ] = not started.
+
 ## Critical priorities
-Enable randomness by Oracle (critical but not urgent)
-Create Character Selection UI.
-Create Character Detail UI.
-Create Auction Smart Contract.
-Create Builds Smart Contract.
-Create Gear Library.
-Create Creature Library.
-Create CicadaToken Smart Contract.
-Create Attacking Functionality.
-Create Healing Functionality.
-Create Recruiting Functionality.
-Create Blacksmith Functionality.
-Create Arcanist Functionality.
-Create Mad Scientist Functionality.
-Create Resurrection Functilaity.
+[/] Enable randomness by Oracle (critical but not urgent)
+[ANT] Create Character Selection UI.
+[/] Create Character Detail UI.
+[ ] Create Auction Smart Contract.
+[ ] Emit events where necessary.
+[X] Create Builds Smart Contract.
+[X] Create Gear Library.
+[X] Create Creature Library.
+[ ] Create CicadaToken Smart Contract.
+[X] Create Migrations Smart Contract.
+[X] Create Attacking Functionality.
+[X] Create Healing Functionality.
+[ ] Create Recruiting Functionality.
+[ ] Create Blacksmith Functionality.
+[ ] Create Arcanist Functionality.
+[ ] Create Mad Scientist Functionality.
+[ ] Create Resurrection Functionlaity.
+[X] Add gear smart contract functionality.
+[ ] Find mainhand, offhand, helm, chest, legs, boots sprites (10 each) and populate gear library;
 
 ## Moderate priorites
-Make/find a picture which contains all elements of the city.
-Finish the sprite animation renderer.
-Filter the 936 creature images to choose which ones to use. https://docs.google.com/spreadsheets/d/1V-rn40dYmb5Da2hNzrCGENrYxbt1ms5XDr5ClYLXnKg/edit?folder=0ABL_kzJhkBDRUk9PVA#gid=0
-Sort the creatures into tiers and determine their base attribute mods.
-Find images for head, chest, legs, boots, offhand and mainhand sprites (10 each for all except off/mainhand which has 20).
+[-] Make/find a picture which contains all elements of the city.
+[-] Finish the sprite animation renderer.
+[X] Filter the 936 creature images to choose which ones to use. https://docs.google.com/spreadsheets/d/1V-rn40dYmb5Da2hNzrCGENrYxbt1ms5XDr5ClYLXnKg/edit?folder=0ABL_kzJhkBDRUk9PVA#gid=0
+[X] Sort the creatures into tiers and determine their base attribute mods.
+[ ] Find images for head, chest, legs, boots, offhand and mainhand sprites (10 each for all except off/mainhand which has 20).
 
 ## Wishlist (no current priority)
-Set defenders for incoming attacks.
-Attack with multiple attackers.
+[ ] Set defenders for incoming attacks.
+[ ] Attack with multiple attackers.
 
 ## Inspiration
 CryptoZombies

@@ -7,6 +7,7 @@
     align-content: center;
     text-align: center;
     margin: auto;
+    max-height: 100%;
 
 }
 
@@ -15,17 +16,18 @@
 
 
 .smallimage {
-    height: 20em;
-    width: 20em;
-    opacity: 60%;
+    height: 16em;
+    width: 16em;
+    opacity: 90%;
     margin: 10%;
-    margin-left: 0%;
+    margin: 5%;
     position:relative;
     border-radius: 1000%;
+    background-color: goldenrod;
 }
 
 img:hover {
     opacity: 100%;
-    background-color: black;
+    background-color: white;
     transition: opacity 0.5s ease;
 }

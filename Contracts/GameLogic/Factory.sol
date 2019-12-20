@@ -4,8 +4,10 @@ import "../Ownership/ownable.sol";
 import "../SafeMath/safemath.sol";
 import "../SolidityHelpers/solidityHelper.sol";
 import "../Creatures/Creatures.sol";
+import "./Versioning.sol";
+import "../Gear/Gear.sol";
 
-contract Factory is Ownable, SolidityHelper, Creatures{
+contract Factory is Ownable, SolidityHelper, Creatures, Versioning, Gear {
 
   using SafeMath for uint256;
   using SafeMath32 for uint32;
@@ -69,14 +71,16 @@ contract Factory is Ownable, SolidityHelper, Creatures{
   function dnaToStats(uint _dna) public pure returns (uint hp, uint dmg, uint acc, uint eva, uint tier, uint element, uint fightinstyle)  {
     string memory dna = uintToString(_dna);
     string memory id = getSlice(0,3, dna);
+    string memory gear = getSlice(3, 9, dna);
 
     (uint h, uint d, uint a, uint e, uint t, uint elem, uint fightingstyle) = getCreatureMold(id);
+    (uint gH, uint gD, uint gA, uint gE) = getCreatureArmorMods(gear);
 
     return(
-      getHealth(h,t,1),
-      getDamage(d,t,1),
-      getAccuracy(a,t,1),
-      getEvasion(e,t,1),
+      getHealth(h,t,1) + gH,
+      getDamage(d,t,1) + gD,
+      getAccuracy(a,t,1) + gA,
+      getEvasion(e,t,1) + gE,
       t,
       elem,
       fightingstyle
@@ -86,15 +90,15 @@ contract Factory is Ownable, SolidityHelper, Creatures{
   //TODO: Add element and type
 
   function getHealth(uint _baseHealthModifier, uint _tier, uint _level) public pure returns (uint) {
-    return _baseHealthModifier.mul(_tier) + _baseHealthModifier.mul(_level);
+    return _baseHealthModifier.mul(_level);
   }
   function getDamage(uint _baseDamageModifier, uint _tier, uint _level) public pure returns (uint) {
-    return _baseDamageModifier.mul(_tier) + _baseDamageModifier.mul(_level);
+    return _baseDamageModifier.mul(_level);
   }
   function getAccuracy(uint _baseAccuracyModifier, uint _tier, uint _level) public pure returns (uint) {
-    return _baseAccuracyModifier.mul(_tier) + _baseAccuracyModifier.mul(_level);
+    return _baseAccuracyModifier.mul(_level);
   }
   function getEvasion(uint _baseEvasionModifier, uint _tier, uint _level) public pure returns (uint) {
-    return _baseEvasionModifier.mul(_tier) + _baseEvasionModifier.mul(_level);
+    return _baseEvasionModifier.mul(_level);
   }
 }
