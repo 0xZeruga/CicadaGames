@@ -1,7 +1,7 @@
 pragma solidity >=0.5.0 <0.6.0;
 
 import "./helper.sol";
-import "../GameLogic/Factory.sol";
+//import "../GameLogic/Factory.sol";
 
 contract Attack is Helper, Factory {
   uint randNonce = 0;
@@ -13,9 +13,9 @@ contract Attack is Helper, Factory {
   }
 
   function attack(uint _creatureId, uint _targetId) external onlyOwnerOf(_creatureId) {
-    
+    require(creatures[_creatureId].level <= creatures[_targetId]);
     Creature storage myCreature = creatures[_creatureId];
-    Creature storage enemyCreature = creatures[_creatureId];
+    Creature storage enemyCreature = creatures[_targetId];
 
     uint rand = randMod(100);
     uint hc = myCreature.accuracy / enemyCreature.evasion;
@@ -32,6 +32,10 @@ contract Attack is Helper, Factory {
         graveyard[_targetId] = true;
         myCreature.kills = myCreature.kills.add(1);
         enemyCreature.deaths = enemyCreature.deaths.add(1);
+        if(myCreature.level < enemyCreature.level) {
+          //emit honor
+          myCreature.honor.add(enemyCreature.level - myCreature.level);
+        }
       }
       //Hit creature but doesnt die
       myCreature.winCount = myCreature.winCount.add(1);
@@ -59,12 +63,12 @@ contract Attack is Helper, Factory {
   }
 
   function elementModifer(uint a, uint d) public returns(uint) {
-    //Earth, Fire, Construct, Water, Lightning
+    //Earth, Fire, Construct, Water, Lightning (1-5)
     if(a == 1 && b == 2 || a == 2 && b == 3 || a == 3 && b == 4 || a == 4 && b = 5
     || a == 5 && b == 1 || a == 6 && b == 7 || a == 7 && b == 8 || a == 8 && b == 9
     || a == 9 && b == 10 || a == 10 && b == 6) {return -10;}
 
-    //Arcane, Cosmic, Divine, Abyssal
+    //Arcane, Cosmic, Divine, Abyssal (6-9)
     else if(b == 1 && a == 2 || b == 2 && a == 3 || b == 3 && a == 4 || b == 4 && a = 5
     || b == 5 && a == 1 || b == 6 && a == 7 || b == 7 && a == 8 || b == 8 && a == 9
     || b == 9 && a == 6) {return 10;}

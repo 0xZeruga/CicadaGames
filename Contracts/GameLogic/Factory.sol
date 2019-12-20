@@ -36,6 +36,7 @@ contract Factory is Ownable, SolidityHelper, Creatures, Versioning, Gear {
     uint16 tier;
     uint16 element;
     uint16 fightingstyle;
+    uint16 honor;
   }
 
   Creature[] public creatures;
@@ -61,7 +62,7 @@ contract Factory is Ownable, SolidityHelper, Creatures, Versioning, Gear {
     (uint hp, uint dmg, uint acc, uint eva, uint tier, uint element, uint fightingstyle) = dnaToStats(_dna);
 
     uint id = creatures.push(Creature(_name, _dna, 1, uint32(now + cooldownTime), 0, 0, 0, 0,
-    uint16(hp), uint16(hp), uint16(dmg), uint16(acc), uint16(eva), uint16(tier), uint16(element), uint16(fightingstyle))) - 1;
+    uint16(hp), uint16(hp), uint16(dmg), uint16(acc), uint16(eva), uint16(tier), uint16(element), uint16(fightingstyle),0)) - 1;
 
     creatureToOwner[id] = msg.sender;
     ownerCreatureCount[msg.sender] = ownerCreatureCount[msg.sender].add(1);
