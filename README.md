@@ -86,23 +86,16 @@ Each creature also has a type and an element which grants them advantage/disadva
 Mage > Warrior > Scoundrel > Mage +10%
 
 # Element
-Fire > Earth > Lightning > Construct > Arcane > Abyssal > Divine > Cosmic > Water > Fire... +10% 
+  //Elemental Circle
+  Earth < Fire < Construct < Water < Lightning
+
+  //Planar circle
+  Arcane > Cosmic > Divine > Abyssal 
 
 Fire Mage vs Earth Warrior = +20%
-Cosmic Scoundrel vs Construct Warrior = -20%
+Cosmic Scoundrel vs Divine Warrior = -20%
 +Neutral = No drawback or advantage.
 
-Fire burns earth.
-Earth mitigates lightning.
-Lightning electrocutes constructs.
-Constructs are resistant to arcane
-Arcane can't handble abyssal magic
-Abyssal was banished by the Divine
-Divine are surprised by the Cosmic beings.
-Cosmic beings are foreign to water.
-Water puts out fires. 
-
-3 playstyles, 10 elements. 30 combos. 
 
 ## [/] = Halfway-through, [X] = Completed, [-] = Cancelled, [ANT] = Assigned to Anthony, [ ] = not started.
 
@@ -140,7 +133,7 @@ Water puts out fires.
 
 [ ] Create Mad Scientist Functionality.
 
-[ ] Create Resurrection Functionlaity.
+[ ] Create Resurrection Functionality.
 
 [X] Add gear smart contract functionality.
 
@@ -148,7 +141,7 @@ Water puts out fires.
 
 ## Moderate priorites
 
-[-] Make/find a picture which contains all elements of the city.
+[X] Make/find a picture which contains all elements of the city.
 
 [-] Finish the sprite animation renderer.
 
@@ -171,4 +164,3 @@ Diablo2
 
 remember submit hash of nr locally.
 #bytes32 hash = sha3(N,msg.sender)
-
