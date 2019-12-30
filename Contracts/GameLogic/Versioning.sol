@@ -16,7 +16,6 @@ contract Versioning is Ownable {
         gearAddress = _gearAddress;
     }
 
-
     public address creatureAddress;
     public address gearAddress;
     public address[] previousCreatureAddresses;

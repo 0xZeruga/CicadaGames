@@ -15,6 +15,12 @@ contract Buildings is SolidityHelper, Ownable, Factory {
     mapping(address=>uint) arenaLevel;
     //market, arena, graveyard
 
+    event BuildingLeveled(address indexed _from, bytes32 indexed _nameOfBuilding, uint _level);
+    event CreatureHealed(address indexed _id, uint hitpoints);
+
+
+    event CreatureLeveled(address indexed _from, bytes32 indexed _id, uint _value);
+
     function initLevels() internal {
         barLevel[msg.sender] = 1;
         blacksmithLevel[msg.sender] = 1;
@@ -41,26 +47,32 @@ contract Buildings is SolidityHelper, Ownable, Factory {
         if(_buildingType == 0) {
             require(barLevel[msg.sender] < MAX_LEVEL, "Already max level");
             barLevel[msg.sender] = barLevel[msg.sender].add(1);
+            emit BuildingLeveled(msg.sender, "Bar", barLevel[msg.sender]);
         }
         if(_buildingType == 1) {
             require(blacksmithLevel[msg.sender] < MAX_LEVEL, "Already max level");
             blacksmithLevel[msg.sender] = blacksmithLevel[msg.sender].add(1);
+            emit BuildingLeveled(msg.sender, "Blacksmith", blacksmithLevel[msg.sender]);
         }
         if(_buildingType == 2) {
             require(arcanistLevel[msg.sender] < MAX_LEVEL, "Already max level");
             arcanistLevel[msg.sender] = arcanistLevel[msg.sender].add(1);
+            emit BuildingLeveled(msg.sender, "Arcanist", arcanistLevel[msg.sender]);
         }
         if(_buildingType == 3) {
             require(madscientistLevel[msg.sender] < MAX_LEVEL, "Already max level");
             madscientistLevel[msg.sender] = madscientistLevel[msg.sender].add(1);
+            emit BuildingLeveled(msg.sender, "MadScientist", madscientistLevel[msg.sender]);
         }
         if(_buildingType == 4) {
             require(hospitalLevel[msg.sender] < MAX_LEVEL, "Already max level");
             hospitalLevel[msg.sender] = hospitalLevel[msg.sender].add(1);
+            emit BuildingLeveled(msg.sender, "Hospital", hospitalLevel[msg.sender]);
         }
         if(_buildingType == 5) {
             require(arenaLevel[msg.sender] < MAX_LEVEL, "Already max level");
             arenaLevel[msg.sender] = arenaLevel[msg.sender].add(1);
+            emit BuildingLeveled(msg.sender, "Arena", arenaLevel[msg.sender]);
         }
         else {
             revert("No building type matches parameter");
@@ -95,6 +107,7 @@ contract Buildings is SolidityHelper, Ownable, Factory {
         else {
             creatures[_creatureID].health.Add(hospitalLevel[msg.sender].mul(5));
         }
+        emit CreatureHealed(_creatureID, creatures[_creatureID].health);
     }
 
     //Arena functionality

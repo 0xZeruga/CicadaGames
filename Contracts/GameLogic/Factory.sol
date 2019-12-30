@@ -88,8 +88,6 @@ contract Factory is Ownable, SolidityHelper, Creatures, Versioning, Gear {
     );
   }
 
-  //TODO: Add element and type
-
   function getHealth(uint _baseHealthModifier, uint _tier, uint _level) public pure returns (uint) {
     return _baseHealthModifier.mul(_level);
   }
@@ -101,5 +99,17 @@ contract Factory is Ownable, SolidityHelper, Creatures, Versioning, Gear {
   }
   function getEvasion(uint _baseEvasionModifier, uint _tier, uint _level) public pure returns (uint) {
     return _baseEvasionModifier.mul(_level);
+  }
+  function getLevel(uint _id) public pure returns (uint) {
+    return creatures[_id].level;
+  }
+  function getFightingStyle(uint _id) public pure returns (uint) {
+    return creatures[_id].fightingstyle;
+  }
+  function getElement(uint _id) public pure returns (uint) {
+    return creatures[_id].element;
+  }
+  function getBaseValue(uint _id) public pure returns (uint) {
+    return creatures[_id].level.mul(creatures[_id].tier.mul(creatures[_id].tier));
   }
 }

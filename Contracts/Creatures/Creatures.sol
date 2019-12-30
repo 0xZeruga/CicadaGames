@@ -5,7 +5,7 @@ import "../GameLogic/Helper.sol";
 
 contract Creatures is Helper {
 
-      function getCreatureMold(string memory _dnaID) public pure returns (uint healthMod,
+   function getCreatureMold(string memory _dnaID) public pure returns (uint healthMod,
    uint damageMod, uint accuracyMod, uint evasionMod, uint tier, uint element, uint fightingstyle) {
       require(bytes(_dnaID).length == 3, "ID length doesn't match");
 

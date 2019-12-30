@@ -109,7 +109,7 @@ Cosmic Scoundrel vs Divine Warrior = -20%
 
 [ ] Create Auction Smart Contract.
 
-[ ] Emit events where necessary.
+[X] Emit events where necessary.
 
 [X] Create Builds Smart Contract.
 
@@ -117,7 +117,7 @@ Cosmic Scoundrel vs Divine Warrior = -20%
 
 [X] Create Creature Library.
 
-[ ] Create CicadaToken Smart Contract.
+[X] Create CicadaToken Smart Contract.
 
 [X] Create Migrations Smart Contract.
 
@@ -137,7 +137,9 @@ Cosmic Scoundrel vs Divine Warrior = -20%
 
 [X] Add gear smart contract functionality.
 
-[ ] Find mainhand, offhand, helm, chest, legs, boots sprites (10 each) and populate gear library;
+[ ] Convert to ERC1155.
+
+[ ] Find mainhand, offhand, helm, chest, legs, boots sprites (10 each);
 
 ## Moderate priorites
 
@@ -149,7 +151,7 @@ Cosmic Scoundrel vs Divine Warrior = -20%
 
 [X] Sort the creatures into tiers and determine their base attribute mods.
 
-[ ] Find images for head, chest, legs, boots, offhand and mainhand sprites (10 each for all except off/mainhand which has 20).
+[ ] Add possibility to recycle characters for cicadatokens.
 
 ## Wishlist (no current priority)
 
