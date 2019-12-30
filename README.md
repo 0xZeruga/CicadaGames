@@ -145,6 +145,10 @@ Cosmic Scoundrel vs Divine Warrior = -20%
 
 [X] Sort and color the items.
 
+[ ] Remove attackers and defenders upon death.
+
+[ ] Refactor.
+
 ## Moderate priorites
 
 [ ] Create PVP Battle Matching.
@@ -161,9 +165,9 @@ Cosmic Scoundrel vs Divine Warrior = -20%
 
 ## Wishlist (no current priority)
 
-[ ] Set defenders for incoming attacks.
+[X] Set defenders for incoming attacks.
 
-[ ] Attack with multiple attackers.
+[X] Attack with multiple attackers.
 
 ## Inspiration
 CryptoZombies
