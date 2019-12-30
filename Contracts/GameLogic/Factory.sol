@@ -45,6 +45,98 @@ contract Factory is Ownable, SolidityHelper, Creatures, Versioning, Gear {
   mapping (address => uint) ownerCreatureCount;
   mapping(uint => bool) public graveyard;
 
+  mapping(address => uint[]) public defendingCreatures;
+  mapping(address => uint[]) public attackingCreatures;
+
+  mapping(address => uint) public defendingChallengeRating;
+  mapping(address => uint) public attackingChallengeRating;
+
+  function withinChallengeRange(uint a, uint b) public returns(bool) {
+    if(a.sub(b) >= a.mul(0.1) && a.sub(b) <= a.mul(-0.1)){
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+
+  function getattackingChallengeRating(address _attacker) public returns(uint) {
+    uint rating = 0;
+    for(int i = 0; i < _attacker[attackCreatures.length]-1; i++) {
+      rating.add(getCreatureChallengerating(_attacker[attackingCreatures][i]));
+    }
+    return rating;
+  }
+
+  function getdefendingChallengeRating(address _defender) public returns(uint) {
+    uint rating = 0;
+    for(int i = 0; i < _defender[defendingCreatures.length]-1; i++) {
+      rating.add(getCreatureChallengerating(_defender[defendingCreatures][i]));
+    }
+    return rating;
+  }
+
+  function getCreatureChallengerating(uint _id) public returns(uint){
+    return creatures[_id].health + creatures[_id].damage + creatures[_id].accuracy + creatures[_id].evasion;
+  }
+  function addDefender(uint _id) public {
+    require(creatureToOwner[id] == msg.sender, "Can only stage your own creatures");
+    require(notAttacker(_id), "Creature already staged as attacker");
+    require(isAlive(_id), "Creature is dead");
+    require(msg.sender[defendingCreatures].length < 5, "Defenders are full");
+    msg.sender[defendingCreatures].push(creatures[_id]);
+  }
+  function removeDefender(uint _id) public {
+    require(creatureToOwner[id] == msg.sender, "Can only stage your own creatures");
+    require(notAttacker(_id), "Creature already staged as attacker");
+    require(msg.sender[defendingCreatures].length > 0, "Defenders are empty");
+    remove(_id, msg.sender[defendingCreatures]);
+  }
+  function addAttacker(uint _id) public {
+    require(creatureToOwner[id] == msg.sender, "Can only stage your own creatures");
+    require(notDefender(_id), "Creature already staged as attacker");
+    require(isAlive(_id), "Creature is dead");
+    require(msg.sender[attackingCreatures].length < 5, "Defenders are full");
+    msg.sender[attackingCreatures].push(creatures[_id]);
+  }
+  function removeAttacker(uint _id) public {
+    require(creatureToOwner[id] == msg.sender, "Can only stage your own creatures");
+    require(notDefender(_id), "Creature already staged as attacker");
+    require(msg.sender[attackingCreatures].length > 0, "Defenders are empty");
+    remove(_id, msg.sender[attackingCreatures]);
+  }
+
+  function remove(uint index, uint[] array) public returns(uint[]) {
+    if (index >= array.length) return;
+
+    for (uint i = index; i<array.length-1; i++){
+        array[i] = array[i+1];
+    }
+    delete array[array.length-1];
+    array.length--;
+    return array;
+  }
+
+  function notAttacker(uint _id) public returns (bool) {
+    for (uint i = 0; i < msg.sender[attackingCreatures].length-1; i++){
+        array[i] = array[i+1];
+        if(msg.sender[attackingCreatures][i] == _id) {
+          return false;
+        }
+    }
+    return true;
+  }
+
+  function notDefender(uint _id) public returns (bool) {
+    for (uint i = 0; i < msg.sender[defendingCreatures].length-1; i++){
+        array[i] = array[i+1];
+        if(msg.sender[defendingCreatures][i] == _id) {
+          return false;
+        }
+    }
+    return true;
+  }
+
   function createRandomCreature(string memory _name) public {
     require(ownerCreatureCount[msg.sender] == 0, "creature has no owner");
     uint randDna = _generateRandomDna(_name);
