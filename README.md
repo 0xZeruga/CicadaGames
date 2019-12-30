@@ -109,6 +109,8 @@ Cosmic Scoundrel vs Divine Warrior = -20%
 
 [ ] Create Auction Smart Contract.
 
+[ ] Create PvE Battle Matching.
+
 [X] Emit events where necessary.
 
 [X] Create Builds Smart Contract.
@@ -139,9 +141,13 @@ Cosmic Scoundrel vs Divine Warrior = -20%
 
 [ ] Convert to ERC1155.
 
-[ ] Find mainhand, offhand, helm, chest, legs, boots sprites (10 each);
+[X] Find mainhand, offhand, helm, chest, legs, boots sprites (10 each);
+
+[X] Sort and color the items.
 
 ## Moderate priorites
+
+[ ] Create PVP Battle Matching.
 
 [X] Make/find a picture which contains all elements of the city.
 
