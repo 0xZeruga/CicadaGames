@@ -1,150 +1,168 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <meta charset="UTF-8">
-    <meta name=”viewport” content="width=device-width, initial-scale=1.0">
-    <meta http-equiv=”X-UA-Compatible” content=”ie=edge”>
-    <title>Town</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="icon" href="../../../images/cicada.png">
-    <link rel="stylesheet" type="text/css" href="../characterselection/characterselection.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<meta charset=utf-8 />
+<title>Character Selection</title>
+<!--[if IE]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+ <!-- Required meta tags -->
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+ <!-- Bootstrap CSS -->
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+ <!-- Google Fonts -->
+ <link href="https://fonts.googleapis.com/css?family=Bangers&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css?family=Girassol&display=swap" rel="stylesheet">
+
+<!-- CSS Stylesheet -->
+<link rel="stylesheet" href="characterSelection.css">
+
+<!-- Tabletop.Js -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
+
+<!-- JQuery -->
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+
 </head>
-
 <body>
-    <h1>Arena</h1>
-    <h2>Gladiators</h2>
-    <label for="address" class="col-lg-2 control-label">Ethereum Address</label>
-    <input id="address" type="text">
-    <label for="balance" class="col-lg-2 control-label">Balance</label>
-    <input id="balance" type="text">
 
-    <table id="characterTable">
-        <tbody>
-            <tr>
-                <td>
-                    <button class="link" onClick="NameSort()"><span style="font-weight:bold">Name</span></td>
-                <td>
-                    <button class="link" onClick="LevelSort()"><span style="font-weight:bold">Level</span></td>
-                <td>
-                    <button class="link" onClick="DateSort()"><span style="font-weight:bold">Date Created</span></td>
-                <td>
-                    <button class="link" onClick="ActionSort()"><span style="font-weight:bold">Currently</span></td>
-            </tr>
-            <tr class="clickable-row" id="hej">
-                <td>Test name</td>
-                <td>1</td>
-                <td>01-01-01</td>
-                <td>None</td>
-            </tr>
-            <tr class="clickable-row" data-href="url://bluh">
-                <td>Test 2</td>
-                <td>2</td>
-                <td>01-01-01</td>
-                <td>None</td>
-            </tr>
-        </tbody>
-    </table>
+    <DIV class="titleName" style="position: absolute; top:90px; left:750px;">
+    </DIV>
 
-    <script>
+        <table id="tableCharacters" width="500">
+            <thead>
+                <th class="thclass" colspan="3">
+                    <p>Character Selection</p>
+                </th>
+            </thead>
 
-        //Change so that click ports info
-        $('#characterTable').find('tr').click(function() {
-            var textrow = $(this).find('td:first').text();
-            alert('You clicked ' + textrow);
-            var el = document.getElementById("hej");
+            <tbody class="firstTable">
+                
+            </tbody>            
+        </table>
 
-            if (el) {
-                el.addEventListener('click', resetEmotes, false);
-            } else {
-                console.log(el);
-            }
+        <div class="imageDisplay">
+            <img class="image1" src="characterImages/common_aby_assassin.png" alt="">
+            <img class="image1" src="characterImages/common_aby_bruiser.png" alt="">
+            <img class="image1" src="characterImages/common_aby_mage.png" alt="">
+            <img class="image1" src="characterImages/common_aby_tank.png" alt="">
+            <img class="image1" src="characterImages/common_arc_assassin.png" alt="">
+            <img class="image1" src="characterImages/common_arc_bruiser.png" alt="">
+            <img class="image1" src="characterImages/common_arc_mage.png" alt="">
+            <img class="image1" src="characterImages/common_arc_tank.png" alt="">
+            <img class="image1" src="characterImages/common_con_assassin.png" alt="">
+            <img class="image1" src="characterImages/common_con_bruiser.png" alt="">
+            <img class="image1" src="characterImages/common_con_mage.png" alt="">
+            <img class="image1" src="characterImages/common_con_tank.png" alt="">
+            <img class="image1" src="characterImages/common_cos_assassin.png" alt="">
+            <img class="image1" src="characterImages/common_cos_bruiser.png" alt="">
+            <img class="image1" src="characterImages/common_cos_mage.png" alt="">
+            <img class="image1" src="characterImages/common_cos_tank.png" alt="">
+            <img class="image1" src="characterImages/common_div_assassin.png" alt="">
+            <img class="image1" src="characterImages/common_div_bruiser.png" alt="">
+            <img class="image1" src="characterImages/common_div_mage.png" alt="">
+            <img class="image1" src="characterImages/common_div_tank.png" alt="">
+            <img class="image1" src="characterImages/common_earth_assassin.png" alt="">
+            <img class="image1" src="characterImages/common_earth_bruiser.png" alt="">
+            <img class="image1" src="characterImages/common_earth_mage.png" alt="">
+            <img class="image1" src="characterImages/common_fire_assassin.png" alt="">
+            <img class="image1" src="characterImages/common_fire_bruiser.png" alt="">
+            <img class="image1" src="characterImages/common_fire_mage.png" alt="">
+            <img class="image1" src="characterImages/common_fire_tank.png" alt="">
+            <img class="image1" src="characterImages/common_light_assassin.png" alt="">
+            <img class="image1" src="characterImages/common_light_bruiser.png" alt="">
+            <img class="image1" src="characterImages/common_light_mage.png" alt="">
+            <img class="image1" src="characterImages/common_light_tank.png" alt="">
+            <img class="image1" src="characterImages/common_neutral_assassin_1.png" alt="">
+            <img class="image1" src="characterImages/common_neutral_assassin_2.png" alt="">
+            <img class="image1" src="characterImages/common_neutral_bruiser_1.png" alt="">
+            <img class="image1" src="characterImages/common_neutral_bruiser_2.png" alt="">
+            <img class="image1" src="characterImages/common_neutral_mage_1.png" alt="">
+            <img class="image1" src="characterImages/common_neutral_mage_2.png" alt="">
+            <img class="image1" src="characterImages/common_neutral_tank_1.png" alt="">
+            <img class="image1" src="characterImages/common_neutral_tank_2.png" alt="">
+            <img class="image1" src="characterImages/common_water_assassin.png" alt="">
+            <img class="image1" src="characterImages/common_water_bruiser.png" alt="">
+            <img class="image1" src="characterImages/common_water_mage.png" alt="">
+            <img class="image1" src="characterImages/common_water_tank.png" alt="">
+            <img class="image1" src="characterImages/e_aby_tank.png" alt="">
+            <img class="image1" src="characterImages/e_arc_mage.png" alt="">
+            <img class="image1" src="characterImages/e_cos_bruiser.png" alt="">
+            <img class="image1" src="characterImages/e_div_bruiser.png" alt="">
+            <img class="image1" src="characterImages/e_earth_assassin.png" alt="">
+            <img class="image1" src="characterImages/e_fire_mage.png" alt="">
+            <img class="image1" src="characterImages/e_light_assassin.png" alt="">
+            <img class="image1" src="characterImages/e_neutral_tank.png" alt="">
+            <img class="image1" src="characterImages/e_water_bruiser.png" alt="">
+            <img class="image1" src="characterImages/m_abyss_assassin.png" alt="">
+            <img class="image1" src="characterImages/m_arc_assassin.png" alt="">
+            <img class="image1" src="characterImages/m_con_bruiser.png" alt="">
+            <img class="image1" src="characterImages/m_cos_tank.png" alt="">
+            <img class="image1" src="characterImages/m_div_tank.png" alt="">
+            <img class="image1" src="characterImages/m_earth_tank.png" alt="">
+            <img class="image1" src="characterImages/m_fire_bruiser.png" alt="">
+            <img class="image1" src="characterImages/m_light_bruiser.png" alt="">
+            <img class="image1" src="characterImages/m_neutral_mage.png" alt="">
+            <img class="image1" src="characterImages/m_water_mage.png" alt="">
+            <img class="image1" src="characterImages/rare_aby_bruiser.png" alt="">
+            <img class="image1" src="characterImages/rare_arc_bruiser.png" alt="">
+            <img class="image1" src="characterImages/rare_con_mage.png" alt="">
+            <img class="image1" src="characterImages/rare_cos_mage.png" alt="">
+            <img class="image1" src="characterImages/rare_div_mage.png" alt="">
+            <img class="image1" src="characterImages/rare_earth_mage.png" alt="">
+            <img class="image1" src="characterImages/rare_fire_tank.png" alt="">
+            <img class="image1" src="characterImages/rare_light_assassin.png" alt="">
+            <img class="image1" src="characterImages/rare_neutral_bruiser.png" alt="">
+            <img class="image1" src="characterImages/rare_neutral_tank.png" alt="">
+            <img class="image1" src="characterImages/rare_water_tank.png" alt="">
+            <img class="image1" src="characterImages/un_aby_bruiser.png" alt="">
+            <img class="image1" src="characterImages/un_aby_mage.png" alt="">
+            <img class="image1" src="characterImages/un_aby_tank.png" alt="">
+            <img class="image1" src="characterImages/un_arc_assassin.png" alt="">
+            <img class="image1" src="characterImages/un_arc_bruiser.png" alt="">
+            <img class="image1" src="characterImages/un_arc_mage.png" alt="">
+            <img class="image1" src="characterImages/un_con_assassin.png" alt="">
+            <img class="image1" src="characterImages/un_con_bruiser.png" alt="">
+            <img class="image1" src="characterImages/un_con_tank.png" alt="">
+            <img class="image1" src="characterImages/un_cos_assassin.png" alt="">
+            <img class="image1" src="characterImages/un_cos_mage.png" alt="">
+            <img class="image1" src="characterImages/un_cos_tank.png" alt="">
+            <img class="image1" src="characterImages/un_div_bruiser.png" alt="">
+            <img class="image1" src="characterImages/un_div_mage.png" alt="">
+            <img class="image1" src="characterImages/un_div_tank.png" alt="">
+            <img class="image1" src="characterImages/un_earth_assassin.png" alt="">
+            <img class="image1" src="characterImages/un_earth_bruiser.png" alt="">
+            <img class="image1" src="characterImages/un_earth_tank.png" alt="">
+            <img class="image1" src="characterImages/un_fire_assassin.png" alt="">
+            <img class="image1" src="characterImages/un_fire_bruiser.png" alt="">
+            <img class="image1" src="characterImages/un_fire_mage.png" alt="">
+            <img class="image1" src="characterImages/un_light_assassin.png" alt="">
+            <img class="image1" src="characterImages/un_light_bruiser.png" alt="">
+            <img class="image1" src="characterImages/un_light_mage.png" alt="">
+            <img class="image1" src="characterImages/un_neutral_assassin_1.png" alt="">
+            <img class="image1" src="characterImages/un_neutral_assassin_2.png" alt="">
+            <img class="image1" src="characterImages/un_neutral_bruiser_1.png" alt="">
+            <img class="image1" src="characterImages/un_neutral_bruiser_2.png" alt="">
+            <img class="image1" src="characterImages/un_neutral_mage_1.png" alt="">
+            <img class="image1" src="characterImages/un_neutral_tank_1.png" alt="">
+            <img class="image1" src="characterImages/un_water_assassin.png" alt="">
+            <img class="image1" src="characterImages/un_water_bruiser.png" alt="">
+            <img class="image1" src="characterImages/un_water_tank.png" alt="">
+        </div>
 
-            function resetEmotes() {
-                console.log("Testing");
-            }
-
-            if (typeof web3 !== 'undefined') {
-                var web3 = new Web3(web3.currentProvider);
-            } else {
-                // set the provider you want from Web3.providers
-                var web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
-            }
-            web3.eth.defaultAccount = web3.eth.accounts[0];
-            console.log(web3.eth.defaultAccount.Balance);
-
-            /*
-                var abi = JSON.parse('{"contract_name": "Something","abi": [{"constant":true,"inputs":[],"name":"hello","outputs":[{"name":"","type":"bool"}],"type":"function"}]');
-                var ArenaContract = web3.eth.contract(abi);
-                var Arena = ArenaContract.at('PASTE CONTRACT ADDRESS HERE');
-                console.log(Arena); 
-            */
-
-            var adr = document.getElementById("address");
-            adr.innerHTML = web3.eth.defaultAccount;
-
-            //tokens = Arena.GetPlayerBalance(web3.eth.defaultAccount);
-            //  var bal = document.getElementById("balance");
-            //  bal.innerHTML = tokens;
-            //  GenerateFrontPage();
-            
-            var inputElement = document.createElement('input');
-            inputElement.type = "button"
-            inputElement.addEventListener('click', function() {
-                gotoNode(result.name);
-            });
-        });
-
-        function GenerateFrontPage() {
-            var glads = Arena.GetPlayerGladiators(web3.eth.defaultAccount);
-            var gladlength = glads.length;
-            var table = document.getElementById("characterTable");
-            var i;
-            for (i = 0; i < gladlength; i++) {
-                var row = table.insertRow(-1);
-                var name = row.insertCell(0);
-                var level = row.insertCell(1);
-                var datecreated = row.insertCell(2);
-                var currently = row.insertCell(3);
-                name.innerHTML = glads[i].Name; //
-                level.innerHTML = glads[i].Level;
-                datecreated.innerHTML = glads[i].DateCreated;
-                currently.innerHTML = glads[i].Currently;
-                var inputElement = row.createElement('input');
-                inputElement.type = "button"
-                inputElement.addEventListener('click', function() {
-                    GenerateCharacterPage(row.Name.innerHTML);
-                });
-            }
-        }
-
-        $('#character tr').on('click', 'tr', function() {
-        GenerateCharacterPage("gladid");
-        });
-
-        function GenerateCharacterPage(id) {
-            console.log("ok" + id);
-            //Generate character from id.
-        }
-
-        function NameSort() {
-            console.log("Name");
-        }
-
-        function LevelSort() {
-            console.log("Level");
-        }
-
-        function DateSort() {
-            console.log("Date");
-        }
-
-        function ActionSort() {
-            console.log("Action");
-        }
-    </script>
-
+        <div class="dataGrid">
+        </div>
+                
+    <script type="text/javascript" src="characterSelection.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
-
 </html>
