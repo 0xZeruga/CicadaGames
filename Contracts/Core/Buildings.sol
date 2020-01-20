@@ -1,9 +1,8 @@
 pragma solidity >=0.5.0 <0.6.0;
 
-import "../SolidityHelpers/solidityHelper.sol";
-import "../Ownership/Ownable.sol";
-import "../GameLogic/Factory.sol";
-
+import "../Tools/SolidityHelper.sol";
+import "../Tools/Ownable.sol";
+import "./Factory.sol";
 
 contract Buildings is SolidityHelper, Ownable, Factory {
 
@@ -13,14 +12,21 @@ contract Buildings is SolidityHelper, Ownable, Factory {
     mapping(address=>uint) madscientistLevel;
     mapping(address=>uint) hospitalLevel;
     mapping(address=>uint) arenaLevel;
-    //market, arena, graveyard
 
     event BuildingLeveled(address indexed _from, bytes32 indexed _nameOfBuilding, uint _level);
     event CreatureHealed(address indexed _id, uint hitpoints);
-
-
     event CreatureLeveled(address indexed _from, bytes32 indexed _id, uint _value);
 
+    SolidityHelper instanceHelper;
+    Ownable instanceOwnable;
+    Factory instanceFactory;
+
+    //Requires Solidityhelper, Ownable and Factory contract.
+    constructor(address _help, address _own, address _fact) public {
+        instanceHelper = SolidityHelper(_help);
+        instanceOwnable = Ownable(_own);
+        instanceFactory = Factory(_fact);
+    }
     function initLevels() internal {
         barLevel[msg.sender] = 1;
         blacksmithLevel[msg.sender] = 1;

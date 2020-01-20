@@ -1,8 +1,8 @@
 pragma solidity >=0.5.0 <0.6.0;
 
 
-import "../Ownership/ownable.sol";
-import "../SafeMath/SafeMath.sol";
+import "../Tools/Ownable.sol";
+import "../Tools/SafeMath.sol";
 
 /*
 This contract is used to patch the code by pointers to the storage of creature and gear data.

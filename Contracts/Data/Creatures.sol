@@ -1,9 +1,9 @@
 pragma solidity >=0.5.0 <0.6.0;
 
-import "../GameLogic/Helper.sol";
+import "../Tools/SolidityHelper.sol";
 
 
-contract Creatures is Helper {
+contract Creatures is SolidityHelper {
 
    function getCreatureMold(string memory _dnaID) public pure returns (uint healthMod,
    uint damageMod, uint accuracyMod, uint evasionMod, uint tier, uint element, uint fightingstyle) {

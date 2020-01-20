@@ -1,9 +1,9 @@
 pragma solidity >=0.5.0 <0.6.0;
 
-import "../Ownership/ownable.sol";
-import "../SafeMath/safemath.sol";
-import "../SolidityHelpers/solidityHelper.sol";
-import "../Creatures/Creatures.sol";
+import "../Tools/Ownable.sol";
+import "../Tools/Safemath.sol";
+import "../Tools/SolidityHelper.sol";
+import "../Data/Creatures.sol";
 
 contract Gear is Ownable, SolidityHelper, Creatures {
 

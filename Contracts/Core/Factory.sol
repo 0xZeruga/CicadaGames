@@ -1,11 +1,12 @@
 pragma solidity >=0.5.0 <0.6.0;
 
-import "../Ownership/ownable.sol";
-import "../SafeMath/safemath.sol";
-import "../SolidityHelpers/solidityHelper.sol";
-import "../Creatures/Creatures.sol";
+import "../Tools/Ownable.sol";
+import "../Tools/Safemath.sol";
+import "../Tools/SolidityHelper.sol";
+import "../Data/Creatures.sol";
+import "../Data/Gear.sol";
 import "./Versioning.sol";
-import "../Gear/Gear.sol";
+
 
 contract Factory is Ownable, SolidityHelper, Creatures, Versioning, Gear {
 
@@ -202,10 +203,10 @@ contract Factory is Ownable, SolidityHelper, Creatures, Versioning, Gear {
     return creatures[_id].element;
   }
   function recycle(uint _id) public pure returns (uint) {
-    require(isAlive(_id));
-    require(creatureToOwner[_id] == msg.sender);
-    require(notAttacker(_id));
-    require(notDefender(_id));
+    require(isAlive(_id), "Creature is not alive");
+    require(creatureToOwner[_id] == msg.sender, "You must own this creature");
+    require(notAttacker(_id), "Creature is staged as attacker");
+    require(notDefender(_id), "Creature is staged as defender");
     uint memory tokens = getCreatureChallengerating(_id);
     delete creatures[_id];
     delete attackingCreatures[_id];

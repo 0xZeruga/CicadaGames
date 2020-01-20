@@ -1,9 +1,0 @@
-mapping address => uint StagedCreatureValueSum
-
-SCVS most be within 10% of challenge.
-
-AttackForce and DefenseForce can have 5 creatures each but no same creatures.
-When attacking player each attacker rolls Accuracy against each defenders Evasion, then combat rules
-ensures as normal.
-
-For every slain creature, their dna gets populated into the MadScientist.

@@ -1,33 +1,19 @@
 pragma solidity >=0.5.0 <0.6.0;
 
-import "./factory.sol";
-
-contract KittyInterface {
-  function getKitty(uint256 _id) external view returns (
-    bool isGestating,
-    bool isReady,
-    uint256 cooldownIndex,
-    uint256 nextActionAt,
-    uint256 siringWithId,
-    uint256 birthTime,
-    uint256 matronId,
-    uint256 sireId,
-    uint256 generation,
-    uint256 genes
-  );
-}
+import "./Factory.sol";
 
 contract Feeding is Factory {
 
-  KittyInterface kittyContract;
+  Factory instanceFactory;
+
+  //Requires factory
+  constructor(address _factory) {
+    instanceFactory = Factory(_factory);
+  }
 
   modifier onlyOwnerOf(uint _creatureId) {
     require(msg.sender == creatureToOwner[_creatureId],  "User must own this creature");
     _;
-  }
-
-  function setKittyContractAddress(address _address) external onlyOwner {
-    kittyContract = KittyInterface(_address);
   }
 
   function _triggerCooldown(Creature storage _creature) internal {

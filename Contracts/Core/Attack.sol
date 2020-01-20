@@ -1,9 +1,16 @@
 pragma solidity >=0.5.0 <0.6.0;
 
-import "./helper.sol";
-//import "../GameLogic/Factory.sol";
+import "./Utility.sol";
+import "./Factory.sol";
 
-contract Attack is Helper, Factory {
+contract Attack is Utility, Factory {
+
+  Utility instanceUtility;
+  //Requires Utility contract.
+  constructor(address _utility) public {
+    instanceUtility = Utility(_utility);
+  }
+
   uint randNonce = 0;
   uint attackVictoryProbability = 70;
 

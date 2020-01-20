@@ -99,6 +99,16 @@ Cosmic Scoundrel vs Divine Warrior = -20%
 
 ## [/] = Halfway-through, [X] = Completed, [-] = Cancelled, [ANT] = Assigned to Anthony, [ ] = not started.
 
+[ ] Resolve circular dependency
+
+Attack needs Utility, Factory?
+Building needs Solidityhelper, Ownable and Factory
+CicadaToken needs SafeMath, ERCInterfaces
+Factory needs Ownable, SolidityHelper, Creatures, Versioning, Gear
+Feeding needs Factory
+Utility needs Feeding
+Versioning needs Ownable, SafeMath
+
 ## Critical priorities
 
 [/] Enable randomness by Oracle (critical but not urgent)
@@ -148,6 +158,8 @@ Cosmic Scoundrel vs Divine Warrior = -20%
 [ ] Remove attackers and defenders upon death.
 
 [ ] Refactor.
+
+[ ] SCVS most be within 10% of challenge.
 
 ## Moderate priorites
 

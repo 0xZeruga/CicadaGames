@@ -1,8 +1,7 @@
 pragma solidity >=0.5.0 <0.6.0;
 
-import "../GameLogic/attack.sol";
-import "../Token/erc721.sol";
-import "../SafeMath/safemath.sol";
+import "../Core/attack.sol";
+import "../Tools/safemath.sol";
 
 contract Ownership is Attack, ERC721 {
 
