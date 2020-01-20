@@ -69,7 +69,7 @@ contract StandardToken is ERC20, ERC223 {
      require(_value <= balances[_from], "Can not send more than balance");
      require(_value <= allowed[_from][msg.sender], "Can not send more than allowed");
 
-    balances[_from] = SafeMath.sub(balances[_from], _value);
+      balances[_from] = SafeMath.sub(balances[_from], _value);
      balances[_to] = SafeMath.add(balances[_to], _value);
      allowed[_from][msg.sender] = SafeMath.sub(allowed[_from][msg.sender], _value);
      emit Transfer(_from, _to, _value);
@@ -102,9 +102,9 @@ contract StandardToken is ERC20, ERC223 {
      emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
      return true;
    }
-   
+
   function transfer(address _to, uint _value, bytes memory _data) public {
-    require(_value > 0 , "Can not send 0");
+    require(_value > 0, "Can not send 0");
     if(isContract(_to)) {
         ERC223ReceivingContract receiver = ERC223ReceivingContract(_to);
         receiver.tokenFallback(msg.sender, _value, _data);
@@ -113,8 +113,8 @@ contract StandardToken is ERC20, ERC223 {
         balances[_to] = balances[_to].add(_value);
          emit Transfer(msg.sender, _to, _value, _data);
     }
-    
-  function isContract(address _addr) private returns (bool is_contract) {
+
+  function isContract(address _addr) private view returns (bool is_contract) {
       uint length;
       assembly {
             //retrieve the size of the code on target address, this needs assembly

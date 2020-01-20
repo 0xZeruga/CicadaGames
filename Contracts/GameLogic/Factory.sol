@@ -201,7 +201,14 @@ contract Factory is Ownable, SolidityHelper, Creatures, Versioning, Gear {
   function getElement(uint _id) public pure returns (uint) {
     return creatures[_id].element;
   }
-  function getBaseValue(uint _id) public pure returns (uint) {
-    return creatures[_id].level.mul(creatures[_id].tier.mul(creatures[_id].tier));
+  function recycle(uint _id) public pure returns (uint) {
+    require(isAlive(_id));
+    require(creatureToOwner[_id] == msg.sender);
+    require(notAttacker(_id));
+    require(notDefender(_id));
+    uint memory tokens = getCreatureChallengerating(_id);
+    delete creatures[_id];
+    delete attackingCreatures[_id];
+    delete defendingCreatures[_id];
   }
 }
